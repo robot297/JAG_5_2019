@@ -2,7 +2,7 @@
 
 ### Question 1 Cereal
 
-ArrayList Practice. Start with `Question_1_Cereals_ArrayList.java`.
+Start with `Question_1_Cereals_ArrayList.java`.
 
  *	Remove Oatmeal from the ArrayList.
  *	Add the name of your favorite breakfast food to the ArrayList.
@@ -66,13 +66,16 @@ Start with the `Question_4_Snowfall_HashMap.java` program.
 
   You are a runner, and you are in training for a race. You'd like to keep track of all of your
   times for your training runs. You only like to run around lakes. Here's some example data,
-  Cedar, 45.15
-  Cedar, 43.32
-  Harriet, 49.34
-  Harriet, 44.43
-  Harriet, 46.22
-  Como, 32.11
-  Como, 28.14
+  
+  |Lake    |Time   |
+  |--------|-------|
+  | Cedar  | 45.15 |
+  | Cedar  | 43.32 |
+  | Harriet| 49.34 |
+  | Harriet| 44.43 |
+  | Harriet| 46.22 |
+  | Como   | 32.11 |
+  | Como   | 28.14 |
  
   Write a program that enables you to enter the names of lakes and times, and store it all of this
   data in data structure(s). You'll need to save every time entered for each lake.
@@ -83,10 +86,12 @@ Start with the `Question_4_Snowfall_HashMap.java` program.
   Your program should be able to analyze the data that you have stored, and print your fastest
   time for each lake you ran around. So, for the data above, your program will display something like
  
-  Cedar, 43.32
-  Harriet, 44.43
-  Como, 32.11
- 
+```
+Cedar, 43.32  
+Harriet, 44.43  
+Como, 32.11
+```
+
   Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
   Your program should use the generic types of data structures.
@@ -119,4 +124,4 @@ Start with the `Question_4_Snowfall_HashMap.java` program.
 
  Your tasks: finish the incomplete methods. Run and test the program. Also run the unit tests.
  You might want to add some extra System.out.println() statements to update the player on the status of the game.
- */
+ 
