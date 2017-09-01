@@ -32,6 +32,11 @@ import static input.InputUtils.*;
 
  Your tasks: finish the incomplete methods. Run and test the program. Also run the unit tests.
  You might want to add some extra System.out.println() statements to update the player on the status of the game.
+ 
+ 
+ And - challenge! = you will need to write your own test to check the behavior of your selectComputerCardValue method.
+ You will also need to write some more tests to check the game behavior.
+ 
  */
 
 public class Question_6_Go_Fish {
@@ -66,7 +71,7 @@ public class Question_6_Go_Fish {
         computerBooks = new ArrayList<>();
 
         // Set up the pool
-        pool = createPool(deck);
+        createPool(deck);
 
         // Play game - players take turns to play
         while (!gameOver()) {
@@ -93,9 +98,9 @@ public class Question_6_Go_Fish {
     }
 
 
-    public static ArrayList<String> createPool(ArrayList<String> deck) {
-        // TODO copy all remaining cards from deck to pool
-        return null;
+    public static void createPool(ArrayList<String> deck) {
+        // TODO copy all cards from deck to pool
+        // This method should modify the global pool variable. It does not need to return anything.
     }
 
 
@@ -175,6 +180,7 @@ public class Question_6_Go_Fish {
     public static String selectComputerCardValue() {
         // TODO Select a valid card value from computerHand. A basic computer
         // strategy could be to select a card at random, or to request the value of the first card in their hand.
+        // You will need to write a test for this method.
         return null;
     }
 
@@ -184,6 +190,8 @@ public class Question_6_Go_Fish {
         // The cards should be shuffled.
         // you can take the first card from the pool and add it to the end of the hand.
         //TODO test that the pool is not empty. If pool is empty, don't modify hand or pool.
+        //This method does not need to return anything.
+        // Pass-by-reference means that any modifications made to hand are the same changes made to hand in the calling method.
     }
 
 

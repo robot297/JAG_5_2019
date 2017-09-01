@@ -8,7 +8,6 @@ import static junit.framework.Assert.assertTrue;
 import static org.junit.Assert.assertArrayEquals;
 
 import static org.junit.Assert.assertEquals;
-import static week_4.Question_3_Recycling_Truck_Arrays.*;
 
 public class Question_3_Recycling_Truck_ArraysTest {
 

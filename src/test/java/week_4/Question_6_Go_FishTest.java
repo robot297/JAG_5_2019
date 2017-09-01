@@ -17,6 +17,7 @@ import static org.powermock.api.easymock.PowerMock.*;
 
 
 import static test_utils.ArrayListUtils.stringArrayListEqual;
+import static test_utils.ArrayListUtils.stringArrayListSameElementsAnyOrder;
 import static week_4.Question_6_Go_Fish.*;
 
 /** Tests for GoFish.
@@ -61,7 +62,7 @@ public class Question_6_Go_FishTest extends TestCase {
         ArrayList<String> exampleDeck = newArrayList("Q", "J", "4");
 
         createPool(exampleDeck);
-        assertTrue(stringArrayListEqual(originalExampleDeck, pool));
+        assertTrue(stringArrayListSameElementsAnyOrder(originalExampleDeck, pool));
 
     }
 

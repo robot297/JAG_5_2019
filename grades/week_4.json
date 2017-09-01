@@ -4,13 +4,13 @@
       "question" : 1,
       "java_file": "Question_1_Cereals_ArrayList",
       "test_file": "Question_1_Cereals_ArrayListTest",
-      "points": 1
+      "points": 0.5
     },
     {
       "question" : 2,
       "java_file": "Question_2_Dice_Rolls_ArrayList",
       "test_file": "Question_2_Dice_Rolls_ArrayListTest",
-      "points": 2
+      "points": 1.5
     },
     {
       "question" : 3,
@@ -34,7 +34,7 @@
       "question" : 6,
       "java_file": "Question_6_Go_Fish",
       "test_file": "Question_6_Go_FishTest",
-      "points": 6
+      "points": 7
     }
 
   ]
