@@ -38,7 +38,6 @@ public class Question_5_Lake_RunningTest {
          como .... 3 ... harriet ... 5 ... superior ... 45345
          In any order
         */
-
         
         assertTrue(Pattern.matches(".*como.*3.*", out));
         assertTrue(Pattern.matches(".*harriet.*5.*", out));
