@@ -11,7 +11,9 @@ import static input.InputUtils.*;
  *	Ask user for a month, and snowfall amount, and add this data to HashMap
  *	Check if month is already in HashMap before adding data.
         If so, warn user that they will overwrite data, and ask for confirmation before writing.
- 
+
+ *  For month names, assume that all month names will be the full name, with the inital
+ *
  *	Identify the month with the most snowfall
  *	Add up all of the snowfall amounts and display the total
 

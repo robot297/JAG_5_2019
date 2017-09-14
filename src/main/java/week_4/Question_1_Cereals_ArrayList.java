@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *	Remove Oatmeal from the ArrayList.
  *	Add the name of your favorite breakfast food to the ArrayList.
  *	Add “Cornflakes” to the ArrayList.
- *	Display all of the cereals in the ArrayList.
+ *	Display all of the items in the ArrayList.
  *	Print a message if the ArrayList contains “Special K”. Print a different message if it does not contain "Special K".
  *	(optional) non-programming question: what does Captain Crunch have to do with computer hacking?
 
@@ -32,11 +32,11 @@ public class Question_1_Cereals_ArrayList {
 
        	// TODO Remove Oatmeal from the ArrayList.
         
-        // TODO	Add the name of your favorite breakfast food to the ArrayList.
+        // TODO	Add the name of your favorite breakfast cereal (or favorite breakfast food) to the ArrayList.
         
         // TODO	Add “Cornflakes” to the ArrayList.
         
-        // TODO	Print all of the cereals in the ArrayList, one per line
+        // TODO	Print all of the items in the ArrayList, one per line
        	
         // TODO Print the exact message "Special K is in the ArrayList" if the ArrayList contains “Special K”.
        	

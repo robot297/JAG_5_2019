@@ -7,7 +7,7 @@ Start with `Question_1_Cereals_ArrayList.java`.
  *	Remove Oatmeal from the ArrayList.
  *	Add the name of your favorite breakfast food to the ArrayList.
  *	Add “Cornflakes” to the ArrayList.
- *	Display all of the cereals in the ArrayList.
+ *	Display all of the items in the ArrayList.
  *	Print a message if the ArrayList contains “Special K”. Print a different message if it does not contain "Special K".
  *	(optional) non-programming question: what does Captain Crunch have to do with computer hacking?
 
