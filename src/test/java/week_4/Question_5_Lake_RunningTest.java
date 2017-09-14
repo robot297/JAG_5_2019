@@ -31,18 +31,19 @@ public class Question_5_Lake_RunningTest {
         q5.printFastestTimeForAllLakes();
 
         String out = PrintUtils.resetStandardOut();
-        out = out.replace("\n", " ").toLowerCase();
+        out = out.replace("\n", " ").toLowerCase();  // remove newlines
+        out = out.replace("\r", "");   // Remove carriage return
 
         /* Check that out contains
          como .... 3 ... harriet ... 5 ... superior ... 45345
          In any order
         */
 
+        
         assertTrue(Pattern.matches(".*como.*3.*", out));
         assertTrue(Pattern.matches(".*harriet.*5.*", out));
         assertTrue(Pattern.matches(".*superior.*45345.*", out));
-
-
+        
     }
 
     @Test
