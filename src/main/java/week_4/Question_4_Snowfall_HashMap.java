@@ -12,13 +12,14 @@ import static input.InputUtils.*;
  *	Check if month is already in HashMap before adding data.
         If so, warn user that they will overwrite data, and ask for confirmation before writing.
 
- *  For month names, assume that all month names will be the full name, with the inital
+ *  For month names, assume that all month names will be the full name, with the
+ *  initial letter capitalized, and will always be spelled the same. You may add input validation if you like.
  *
  *	Identify the month with the most snowfall
  *	Add up all of the snowfall amounts and display the total
 
-
  */
+
 public class Question_4_Snowfall_HashMap {
 
     // Global HashMap, your methods will read and modify this.

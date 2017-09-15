@@ -57,7 +57,9 @@ Start with the `Question_4_Snowfall_HashMap.java` program.
  
   *	Ask user for a month, and snowfall amount, and add this data to HashMap
   *	Check if month is already in HashMap before adding data.
-        If so, warn user that they will overwrite data, and ask for confirmation before writing.
+  If so, warn user that they will overwrite data, and ask for confirmation before writing.
+  For month names, assume that all month names will be the full name, with the initial letter capitalized, and will always be spelled the same. You may add input validation if you like.
+   
   *	Identify the month with the most snowfall
   *	Add up all of the snowfall amounts and display the total
 
