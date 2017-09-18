@@ -22,11 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="Java Auto Grader - Week 4" />
         <module name="Java Auto Grader - Wk 2 3 4 go fishetc" />
         <module name="Java Auto Grader - Wk 2 etc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="Java Auto Grader - Week 4" target="1.8" />
       <module name="Java Auto Grader - Wk 2 3 4 go fishetc" target="1.8" />
       <module name="Java Auto Grader - Wk 2 etc" target="1.8" />
     </bytecodeTargetLevel>

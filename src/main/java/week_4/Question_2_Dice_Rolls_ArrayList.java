@@ -65,9 +65,11 @@ public class Question_2_Dice_Rolls_ArrayList {
     public int diceTotal(ArrayList<Integer> diceValues) {
 
         // TODO add up all of the values in the ArrayList and return this total.
+        // TODO this should still work if there are more or less than 2 dice.
+        // TODO if the diceValues ArrayList is empty or null, return 0 (zero)
 
         return 0;  // Replace with your code.
-
+        
     }
 
 
@@ -75,6 +77,7 @@ public class Question_2_Dice_Rolls_ArrayList {
 
         // TODO return true if all of the values in the diceValues ArrayList are the same.
         // TODO return false for an empty or null ArrayList.
+        // TODO this method should work for 1 dice, 2 dice, 3 dice, 100 dice...
 
        return false; // Replace with your code
 
