@@ -121,10 +121,12 @@ public class Question_6_Go_FishTest extends TestCase {
         expect(InputUtils.stringInput(anyString())).andReturn("2").once();   // "Record" expected behavior
         replay(InputUtils.class);   // "Play" or "activate" the expected behavior.
 
-        // Example pool, hands
+        // Example pool, hands, books
         pool = newArrayList("Q", "A", "3");
         playerHand = newArrayList("A", "2", "3");
         computerHand = newArrayList("7", "8", "9");
+        computerBooks = new ArrayList<>();
+        playerBooks = new ArrayList<>();
 
         // Play
         playerTurn();
@@ -138,8 +140,10 @@ public class Question_6_Go_FishTest extends TestCase {
         assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
         assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
         assertTrue(stringArrayListEqual(expectedPool, pool));
-
-
+    
+        // No books made
+        assertEquals(0, playerBooks.size());
+        assertEquals(0, computerBooks.size());
 
         // 2. Player requests card computer has, then card computer does not have and goes fishing.
 
@@ -164,8 +168,12 @@ public class Question_6_Go_FishTest extends TestCase {
         assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
         assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
         assertTrue(stringArrayListEqual(expectedPool, pool));
-
-
+    
+        // No books made
+        assertEquals(0, playerBooks.size());
+        assertEquals(0, computerBooks.size());
+    
+    
         // 3. Player requests card computer has, another card computer has, then card computer does not have.
         // In this test, the computer has two of one of the cards.
 
@@ -192,7 +200,12 @@ public class Question_6_Go_FishTest extends TestCase {
         assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
         assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
         assertTrue(stringArrayListEqual(expectedPool, pool));
-
+    
+        // No books made
+        assertEquals(0, playerBooks.size());
+        assertEquals(0, computerBooks.size());
+    
+    
         // plays where player makes book(s) in next method
     }
 
@@ -302,6 +315,9 @@ public class Question_6_Go_FishTest extends TestCase {
         pool = newArrayList("Q", "A", "3");
         computerHand = newArrayList("A", "2", "3");
         playerHand = newArrayList("7", "8", "9");
+        computerBooks = new ArrayList<>();
+        playerBooks = new ArrayList<>();
+        
 
         // Play
         computerTurn();
@@ -315,9 +331,13 @@ public class Question_6_Go_FishTest extends TestCase {
         assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
         assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
         assertTrue(stringArrayListEqual(expectedPool, pool));
-
-
-
+    
+    
+        // No books made
+        assertEquals(0, playerBooks.size());
+        assertEquals(0, computerBooks.size());
+    
+    
         // 2. Computer requests card player has, then card player does not have.
 
         reset(Question_6_Go_Fish.class);
@@ -339,9 +359,14 @@ public class Question_6_Go_FishTest extends TestCase {
         assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
         assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
         assertTrue(stringArrayListEqual(expectedPool, pool));
+    
+    
+        // No books made
+        assertEquals(0, playerBooks.size());
+        assertEquals(0, computerBooks.size());
 
-
-
+        
+    
         // 3. Computer requests card player has, another card player has, then card player does not have, and goes fishing.
 
         reset(Question_6_Go_Fish.class);
@@ -364,8 +389,13 @@ public class Question_6_Go_FishTest extends TestCase {
         assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
         assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
         assertTrue(stringArrayListEqual(expectedPool, pool));
-
-
+    
+    
+        // No books made
+        assertEquals(0, playerBooks.size());
+        assertEquals(0, computerBooks.size());
+    
+        
         // TODO 4 and 5. Computer makes book(s), next method
 
     }
