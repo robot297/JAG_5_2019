@@ -35,8 +35,12 @@ public class Question_2_Dice_Rolls_ArrayList {
         
         while (userWantsToContinue()) {
             
+            // Roll the dice
             ArrayList<Integer> diceValues = roll(numberOfDice);
-            System.out.println(diceTotal(diceValues));
+            
+            // Print the dice values rolled
+            System.out.println("The dice have the values: " + diceValues);
+            System.out.println("The total of all dice: " + diceTotal(diceValues));
             if (allSameValue(diceValues)) {
                 System.out.println(SAME_VALUES);
             }
