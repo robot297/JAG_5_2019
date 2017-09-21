@@ -21,9 +21,7 @@ import java.util.Random;
 public class Question_2_Dice_Rolls_ArrayList {
     
     public final String SAME_VALUES = "All the dice have the same value!";
-
-    public int numberOfDice = 3;  // You may change this number to test your program with different numbers of dice
-
+    
     Random rnd = new Random();   // Use this Random number generator in your code.
 
     
@@ -33,7 +31,10 @@ public class Question_2_Dice_Rolls_ArrayList {
     }
     
     public void rollDice() {
-        
+    
+        // How many dice to roll?
+        int numberOfDice = 3;  // You may change this number to test your program with different numbers of dice
+    
         // A do loop is similar to a while loop, but the condition is
         // checked at the end of one loop iteration.
         
