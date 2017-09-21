@@ -60,7 +60,7 @@ public class Question_2_Dice_Rolls_ArrayListTest {
 
         ArrayList<Integer> actual = q2.roll(4);
 
-        assertTrue(ArrayListUtils.intArrayListEqual(expected, actual));
+        assertTrue("Roll the given number of dice, store each number in an ArrayList, and return it. ", ArrayListUtils.intArrayListEqual(expected, actual));
 
     }
 
@@ -94,24 +94,28 @@ public class Question_2_Dice_Rolls_ArrayListTest {
 
         Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();
         ArrayList<Integer> example = newArrayList(4, 5, 3);
-        assertFalse(q2.allSameValue(example));
+        assertFalse("allSameValue called with an ArrayList of 4,5,3 should return false", q2.allSameValue(example));
 
         example = newArrayList(4, 4, 4, 4, 3);
-        assertFalse(q2.allSameValue(example));
+        assertFalse("allSameValue called with an ArrayList of 4, 4, 4, 4, 3 should return false", q2.allSameValue(example));
 
         example = newArrayList(4, 4, 4);
-        assertTrue(q2.allSameValue(example));
-
+        assertTrue("allSameValue called with an ArrayList of 4,4,4 should return true", q2.allSameValue(example));
+    
+        example = newArrayList(1, 1, 1);
+        assertTrue("allSameValue called with an ArrayList of 1, 1, 1 should return true", q2.allSameValue(example));
+    
+    
         example = newArrayList(4);
-        assertTrue(q2.allSameValue(example));
+        assertTrue("allSameValue called with an ArrayList of 4 should return true", q2.allSameValue(example));
 
         // Empty list, returns false
         example = newArrayList();
-        assertFalse(q2.allSameValue(example));
+        assertFalse("allSameValue called with an empty ArrayList should return false", q2.allSameValue(example));
 
         // null list, returns false
         example = null;
-        assertFalse(q2.allSameValue(example));
+        assertFalse("allSameValue called with a null ArrayList should return false", q2.allSameValue(example));
 
     }
 }
