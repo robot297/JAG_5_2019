@@ -17,11 +17,12 @@ import java.util.Random;
  In your program, check if all die have the same value, and print a message
  if all dice show the same value.
  */
+
 public class Question_2_Dice_Rolls_ArrayList {
     
     public final String SAME_VALUES = "All the dice have the same value!";
 
-    public int numberOfDice = 2;
+    public int numberOfDice = 3;  // You may change this number to test your program with different numbers of dice
 
     Random rnd = new Random();   // Use this Random number generator in your code.
 
@@ -33,7 +34,10 @@ public class Question_2_Dice_Rolls_ArrayList {
     
     public void rollDice() {
         
-        while (userWantsToContinue()) {
+        // A do loop is similar to a while loop, but the condition is
+        // checked at the end of one loop iteration.
+        
+        do {
             
             // Roll the dice
             ArrayList<Integer> diceValues = roll(numberOfDice);
@@ -44,13 +48,14 @@ public class Question_2_Dice_Rolls_ArrayList {
             if (allSameValue(diceValues)) {
                 System.out.println(SAME_VALUES);
             }
-        }
+            
+        } while (userWantsToContinue());
     }
     
     public boolean userWantsToContinue() {
 
         // TODO Ask the user if they want to roll again. Return true if so, return false if not
-        // Use the yesNoInput method in InputUtils.
+        // TODO Use the yesNoInput method in InputUtils.
 
         return false;    // Replace with your code
 
