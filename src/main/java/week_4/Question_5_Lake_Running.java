@@ -15,23 +15,32 @@ import static input.InputUtils.*;
  Como, 28.14
 
  Write a program that enables you to enter the names of lakes and times, and store it all of this
- data in data structure(s). You'll need to save every time entered for each lake.
+ data in data structure(s).
+ 
+ Your data structure should save EVERY time entered for each lake.
 
  Don't store it in individual variables. Your program should still work if you started running
  around another lake too (e.g. Lake of the Isles, or Lake Phalen).
 
- Your program should be able to analyze the data that you have stored, and print your fastest
- time for each lake you ran around. So, for the data above, your program will display something like
+ Your program should be able to analyze the data that you have stored.
+ 
+ You should be able to print your fastest time for each lake you ran around.
+ So, for the data above, your program will display something like
 
  Cedar, 43.32
  Harriet, 44.43
  Como, 28.14
 
+ Don't just store the fastest time, because you may want to add more analysis in the future
+ (e.g. figuring out average time).
+ 
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
 
  Your program should use the generic types of data structures.
  You should use methods to organize your program.
  Hint: you may need to combine more than one type of data structure.
+ 
+ 
 
  */
 public class Question_5_Lake_Running {
