@@ -139,3 +139,4 @@ Como, 30.12
  Your tasks: finish the incomplete methods. Run and test the program. Also run the unit tests.
  You might want to add some extra System.out.println() statements to update the player on the status of the game.
  
+ Optional extra challenge: Write your own test to check the behavior of your selectComputerCardValue method.
