@@ -26,14 +26,14 @@ import static input.InputUtils.*;
  Your program should be able to analyze the data that you have stored.
  
  You should be able to print your fastest time for each lake you ran around.
- So, for the data above, your program will display something like
+ So, for the data above, your program will calculate something like
 
  Cedar, 43.32
  Harriet, 44.43
  Como, 28.14
 
  You should also be able to calculate the average time. So, for the same data as above,
- your program will display something like this (numbers are truncated with 2 decimal places)
+ your program will calculate something like this (you may truncate, or round numbers to 2 decimal places)
  
  Cedar, 44.23
  Harriet, 46.66
@@ -41,6 +41,10 @@ import static input.InputUtils.*;
  
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
 
+ 
+ Print all of the the data - Lake Name, Average, and Fastest Time, in a table.
+ 
+ 
  Your program should use the generic types of data structures.
  You should use methods to organize your program.
  Hint: you may need to combine more than one type of data structure.

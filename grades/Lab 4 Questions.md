@@ -80,7 +80,7 @@ Start with the `Question_4_Snowfall_HashMap.java` program.
   | Como   | 28.14 |
  
   Write a program that enables you to enter the names of lakes and times, and store it all of this
-  data in data structure(s). You'll need to save every time entered for each lake.
+  data in data structure(s). You'll need to save EVERY time entered for each lake.
  
   Don't store it in individual variables. Your program should still work if you started running
   around another lake too (e.g. Lake of the Isles, or Lake Phalen).
@@ -93,6 +93,18 @@ Cedar, 43.32
 Harriet, 44.43  
 Como, 28.14
 ```
+
+ You should also be able to calculate the average time for each lake. So, for the same data as above,
+ your program will calculate something like this (you may truncate, or round numbers to 2 decimal places)
+ 
+```
+Cedar, 44.23
+Harriet, 46.66
+Como, 30.12
+```
+ 
+ Print all of the the data - Lake Name, Average, and Fastest Time, in a table.
+
 
   Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
