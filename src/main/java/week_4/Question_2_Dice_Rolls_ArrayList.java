@@ -6,6 +6,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static input.InputUtils.positiveIntInput;
+
 /**
 
  Write a program to roll a set of dice. Generate a random number between 1 and 6 for
@@ -23,20 +25,21 @@ public class Question_2_Dice_Rolls_ArrayList {
     public final String SAME_VALUES = "All the dice have the same value!";
     
     Random rnd = new Random();   // Use this Random number generator in your code.
-
     
     public static void main(String[] args) {
         Question_2_Dice_Rolls_ArrayList dice = new Question_2_Dice_Rolls_ArrayList();
         dice.rollDice();
     }
     
+    
     public void rollDice() {
     
         // How many dice to roll?
-        int numberOfDice = 3;  // You may change this number to test your program with different numbers of dice
+        int numberOfDice = positiveIntInput("How many dice would you like to roll?");
     
         // A do loop is similar to a while loop, but the condition is
         // checked at the end of one loop iteration.
+        // So the set of dice are always rolled at least one time.
         
         do {
             
@@ -53,6 +56,7 @@ public class Question_2_Dice_Rolls_ArrayList {
         } while (userWantsToContinue());
     }
     
+    
     public boolean userWantsToContinue() {
 
         // TODO Ask the user if they want to roll again. Return true if so, return false if not
@@ -65,7 +69,7 @@ public class Question_2_Dice_Rolls_ArrayList {
 
     public ArrayList<Integer> roll(int numberOfDice) {
 
-        // TODO Roll the given number of dice. Store the values in an ArrayList and return.
+        // TODO Roll the given number of dice. Store the values in an ArrayList and return it.
         // Use the global Random rnd to generate random numbers
 
        return null;  // Replace with your code
