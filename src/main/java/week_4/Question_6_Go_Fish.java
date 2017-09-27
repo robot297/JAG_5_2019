@@ -187,7 +187,7 @@ public class Question_6_Go_Fish {
     public static void goFish(ArrayList<String> hand) {
         //TODO remove card from pool and add to this hand.
         // The cards should be shuffled.
-        // you can take the first card from the pool and add it to the end of the hand.
+        // Take the FIRST card from the pool and add it to the end of the hand.
         //TODO test that the pool is not empty. If pool is empty, don't modify hand or pool.
         //This method does not need to return anything.
         // Pass-by-reference means that any modifications made to hand are the same changes made to hand in the calling method.
@@ -203,6 +203,8 @@ public class Question_6_Go_Fish {
     public static void transfer(String card, ArrayList<String> fromHand, ArrayList<String> toHand) {
         // TODO transfer all cards of the given value from one hand to the other.
         // example: if card = "5" then remove all "5" from fromHand and add them to toHand.
+        // example: card = "5" , fromHand = [ 5, 6, 7, 2, 5 ],  toHand = [ 1, 2 ]
+        // After transfer, fromHand = [ 6, 7, 2 ], toHand = [ 1, 2, 5, 5 ]
 
     }
 
@@ -213,6 +215,10 @@ public class Question_6_Go_Fish {
         // example: hand has 4 "6" values in, so a book of 6s. Remove all "6" from hand, and add one "6" to books.
         // example: hand starts as ["6","6","6","2","6","7"], books starts as ["4", "Q"]
         // After transfer, hand = ["2","7"] and books = ["4","Q","6"]
+        
+        // Your method should work if there is more than one book in the hand
+        // Example: ["6","6","A","6","2","A","6","A","7","A"] and books is ["4", "Q"]
+        // Hand should become ["2","7"] and books = ["4","Q","6", "A"]
 
     }
 
