@@ -13,8 +13,10 @@ import static input.InputUtils.*;
         If so, warn user that they will overwrite data, and ask for confirmation before writing.
 
  *  For month names, assume that all month names will be the full name, with the
- *  initial letter capitalized, and will always be spelled the same. You may add input validation if you like.
- *
+ *  initial letter capitalized, and will always be spelled the same, example "May" or "September"
+ 
+ *  Optional: add input validation if you like.
+ 
  *	Identify the month with the most snowfall
  *	Add up all of the snowfall amounts and display the total
 
@@ -40,9 +42,8 @@ public class Question_4_Snowfall_HashMap {
         snowfall.put("March", 6.5);
         snowfall.put("April", 0.1);
         snowfall.put("May", 0.0);
-
-
-
+        
+        
         getNewMonthData();
 
         String monthWithMostSnow = maxSnow();
@@ -52,16 +53,15 @@ public class Question_4_Snowfall_HashMap {
         System.out.println("The total snow was " + totalSnow);
 
         System.out.println("All of the data: ");
-        // TODO answer this question: is the data printed in order? Is that ok?
-
+        
         for (String month : snowfall.keySet()) {
             System.out.println("Month: " + month + ", Snowfall (inches): " + snowfall.get(month));
         }
 
 
     }
-
-
+    
+    
     // You don't need to modify this method.
     public void getNewMonthData() {
         String month = stringInput("Enter month name");

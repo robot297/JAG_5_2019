@@ -25,7 +25,6 @@ public class Question_5_Lake_RunningTest {
         q5.addLake("Superior", 45345);
         q5.addLake("Superior", 1121229);  // Average 583287
         
-
         PrintUtils.catchStandardOut();
 
         q5.printReportForAllLakes();
@@ -34,7 +33,7 @@ public class Question_5_Lake_RunningTest {
         out = out.replace("\n", " ").toLowerCase();  // remove newlines
         out = out.replace("\r", "");   // Remove carriage return
 
-        /* Check that out contains
+        /* Check that lowercased output contains
          como ....5 ..... 3 ...
          harriet ... 11 ..... 5 ...
          superior ... 583287..... 45345
@@ -110,14 +109,14 @@ public class Question_5_Lake_RunningTest {
     
         double delta = 0.1;
         
-        assertEquals("For times 5, 8, 2, the average should be 5. \nThe lake name should not be case sensitive. ", 5, q5.averageTimeForLake("Como"), delta);
         assertEquals("For times 5, 8, 2, the average should be 5. The lake name should not be case sensitive.", 5, q5.averageTimeForLake("Como"), delta);
+        assertEquals("For times 5, 8, 2, the average should be 5. The lake name should not be case sensitive.", 5, q5.averageTimeForLake("coMo"), delta);
         
         assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q5.averageTimeForLake("Harriet"), delta);
-        assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q5.averageTimeForLake("Harriet"), delta);
+        assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q5.averageTimeForLake("HARRiet"), delta);
         
         assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q5.averageTimeForLake("Superior"), delta);
-        assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q5.averageTimeForLake("Superior"), delta);
+        assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q5.averageTimeForLake("superior"), delta);
         
         
         assertEquals("This method should return -1 if a lake is not found", -1, q5.fastestTimeForLake("Not There"), delta);
@@ -144,6 +143,5 @@ public class Question_5_Lake_RunningTest {
         assertEquals(2, q5.fastestTimeForLake("coMO"), delta);
 
 
-        // TODO .... can write more tests? Depends on data structure used.
     }
 }

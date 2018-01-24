@@ -16,7 +16,8 @@ import static org.easymock.EasyMock.expect;
 import static org.powermock.api.easymock.PowerMock.*;
 
 
-import static test_utils.ArrayListUtils.stringArrayListEqual;
+import static test_utils.ArrayListUtils.arrayListEqual;
+import static test_utils.ArrayListUtils.arrayListEqual;
 import static test_utils.ArrayListUtils.stringArrayListSameElementsAnyOrder;
 import static week_4.Question_6_Go_Fish.*;
 
@@ -32,23 +33,24 @@ import static week_4.Question_6_Go_Fish.*;
 @PrepareForTest({InputUtils.class, Question_6_Go_Fish.class})
 public class Question_6_Go_FishTest extends TestCase {
     
+    
     public void testCreateDeck() throws Exception {
 
         ArrayList<String> deck = createDeck();
-        assertEquals(52, deck.size());
+        assertEquals("The deck should contain 52 cards", 52, deck.size());
 
         int expectedSize = 52;
-
+        
         // Remove each card value from cardValues, verify that
         // the correct number are removed after each of 4 loops.
         for (int x = 0 ; x <= 4 ; x++) {
 
-            assertEquals(deck.size(), expectedSize);
+            assertEquals("The deck should contain 4 of each card value, e.g. 4 cards of value A, 4 cards of value 2, 4 cards of value 3...", deck.size(), expectedSize);
 
             for (String v : cardValues) {
                 deck.remove(v);
             }
-
+            
             expectedSize -= 13;
         }
 
@@ -62,7 +64,7 @@ public class Question_6_Go_FishTest extends TestCase {
         ArrayList<String> exampleDeck = newArrayList("Q", "J", "4");
 
         createPool(exampleDeck);
-        assertTrue(stringArrayListSameElementsAnyOrder(originalExampleDeck, pool));
+        assertTrue("This method move all cards from the deck to the pool.", stringArrayListSameElementsAnyOrder(originalExampleDeck, pool));
 
     }
 
@@ -78,8 +80,8 @@ public class Question_6_Go_FishTest extends TestCase {
         ArrayList<String> deckAfterDeal = newArrayList("Q", "A");
         ArrayList<String> handAfterDeal = newArrayList("Q", "J", "4", "5", "3", "2", "4");
 
-        assertTrue(stringArrayListEqual(exampleDeck, deckAfterDeal));
-        assertTrue(stringArrayListEqual(hand, handAfterDeal));
+        assertTrue("When dealing cards, move cards from the deck to the player's hand. The deck does not contain the expected cards after an example deal.", arrayListEqual(exampleDeck, deckAfterDeal));
+        assertTrue("When dealing cards, move cards from the deck to the player's hand. The hand does not contain the expected cards after an example deal.", arrayListEqual(hand, handAfterDeal));
 
     }
 
@@ -105,8 +107,8 @@ public class Question_6_Go_FishTest extends TestCase {
 
          4. Computer does not have card, player fishes, player makes book
 
-         5. Computer does have card, player makes one book [ TODO in separate method ]
-            5b. Computer does have cards, player makes more than one books [ TODO in separate method ]
+         5. Computer does have card, player makes one book [  in separate test method ]
+            5b. Computer does have cards, player makes more than one books [ in separate test method ]
 
         */
 
@@ -137,14 +139,19 @@ public class Question_6_Go_FishTest extends TestCase {
         ArrayList<String> expectedPool = newArrayList("A", "3");
 
         // Check that the expected values are the same as the values in code
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
+        String msg = "Player requests card computer does not have. Player fishes. Cards not moved as expected.";
+        assertTrue(msg + " Player hand does not have fished card.", arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(msg + " Computer hand should not change.", arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(msg + " Remove only the card fished for, from the pool.", arrayListEqual(expectedPool, pool));
     
         // No books made
-        assertEquals(0, playerBooks.size());
-        assertEquals(0, computerBooks.size());
+        msg += "No books should be made after this play.";
+        assertEquals(msg, 0, playerBooks.size());
+        assertEquals(msg, 0, computerBooks.size());
 
+        
+        
+        
         // 2. Player requests card computer has, then card computer does not have and goes fishing.
 
         // Reset the mock, and then set up a sequence of return values.
@@ -164,14 +171,16 @@ public class Question_6_Go_FishTest extends TestCase {
         expectedPlayerHand = newArrayList("A", "2", "3", "3", "Q");
         expectedComputerHand = newArrayList("8", "9");
         expectedPool = newArrayList("A", "3");
+        
+        msg = " Player requests card computer has. Card is transferred.\n Then, Player requests a card computer does have. Player fishes.";
 
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
+        assertTrue(msg + " Player hand not modified as expected", arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(msg + " Computer hand not modified as expected", arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(msg + " Pool not modified as expected", arrayListEqual(expectedPool, pool));
     
         // No books made
-        assertEquals(0, playerBooks.size());
-        assertEquals(0, computerBooks.size());
+        assertEquals(msg + " No books should have been made", 0, playerBooks.size());
+        assertEquals(msg + " No books should have been made", 0, computerBooks.size());
     
     
         // 3. Player requests card computer has, another card computer has, then card computer does not have.
@@ -196,19 +205,26 @@ public class Question_6_Go_FishTest extends TestCase {
         expectedPlayerHand = newArrayList("A", "2", "3", "8", "3", "8", "8", "Q");
         expectedComputerHand = newArrayList("9");
         expectedPool = newArrayList("A", "3");
+    
+    
+        msg = "Player requests card computer has. Card is transferred. " +
+                "\n-- Player requests another card computer has, card is transferred "+
+                "\n-- Player requests a card computer does have. Player fishes";
 
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
+        assertTrue(msg + " Player hand not modified as expected", arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(msg + " Computer hand not modified as expected", arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(msg + " Pool not modified as expected", arrayListEqual(expectedPool, pool));
     
         // No books made
-        assertEquals(0, playerBooks.size());
-        assertEquals(0, computerBooks.size());
+        assertEquals(msg + " No books should have been made", 0, playerBooks.size());
+        assertEquals(msg + " No books should have been made", 0, computerBooks.size());
     
     
         // plays where player makes book(s) in next method
     }
 
+    
+    
     public void testHumanPlayerTurnMakesBooks() throws Exception {
               /*
 
@@ -220,22 +236,20 @@ public class Question_6_Go_FishTest extends TestCase {
                -- Player requests a card computer does have. Player fishes
 
          3. Player requests card computer has. Card is transferred.
-               -- Player requests another card computer has, cad is transferred
+               -- Player requests another card computer has, card is transferred
                -- Player requests a card computer does have. Player fishes
 
         In this test:
 
          4. Computer does not have card, player fishes, player makes book
 
-         5. Computer does have card, player makes one book [ TODO write this test code ]
-            5b. Computer does have cards, player makes more than one books [ TODO write this test ]
-
+         5. Computer does have card, player makes one book
+        
         */
 
         // Mock the InputUtils class to provide a sequence of user input of our choice.
         mockStatic(InputUtils.class);
-
-
+        
         // 4. Player requests card computer doesn't have, but makes book.
 
         expect(InputUtils.stringInput(anyString())).andReturn("A");  //Computer does not have this card.
@@ -255,52 +269,54 @@ public class Question_6_Go_FishTest extends TestCase {
         ArrayList<String> expectedPool = newArrayList("A", "3");
         ArrayList<String> expectedBooks = newArrayList("Q");
 
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
-        assertTrue(stringArrayListEqual(expectedBooks, playerBooks));
+        String msg = "In a play where Computer does not have card, player fishes, player makes book.";
+        
+        assertTrue(msg + " Player hand not modified correctly.", arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(msg + " Computer hand not modified correctly.", arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(msg + " Pool not modified correctly.", arrayListEqual(expectedPool, pool));
+        assertTrue(msg + " Player books not modified correctly.", arrayListEqual(expectedBooks, playerBooks));
 
 
 
-        // TODO 5. Plays where player gets card from computer, fishes and makes book.
+        
+        // Play where player gets card from computer, fishes and makes book.
 
         // Reset the mock and set up new input values.
 
-        fail("Write test for player making one book after their play");
-        fail("Write test for player making more than one book after their play");
-
+        expect(InputUtils.stringInput(anyString())).andReturn("A");  //Computer does have this card, player needs it for a book.
+        replay(InputUtils.class);
+    
+        pool = newArrayList("Q", "5", "3");
+        playerHand = newArrayList("A", "Q", "8", "Q", "A");   // needs two "A"
+        computerHand = newArrayList("3", "A", "9", "8", "A");   // Has two "A"
+        playerBooks = newArrayList();
+    
+        // Play one turn
+        playerTurn();
+    
+        expectedPlayerHand = newArrayList("Q", "8", "Q");   // All cards not "A". A book of "A" was made and removed.
+        expectedComputerHand = newArrayList("3", "9", "8");  // Remove "A"
+        expectedPool = newArrayList("Q", "5", "3");  // Unmodified
+        expectedBooks = newArrayList("A");   // Player has book of "A"
+    
+        String msg = "In a play where Computer does have card, player makes book.";
+    
+        assertTrue(msg + " Player hand not modified correctly.", arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(msg + " Computer hand not modified correctly.", arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(msg + " Pool should not change.", arrayListEqual(expectedPool, pool));
+        assertTrue(msg + " Player books not created correctly.", arrayListEqual(expectedBooks, playerBooks));
+        
     }
 
 
     public void testComputerTurnNoBooks() throws Exception {
 
-        /*
-
-        Example plays covering various scenarios.
-
-
-        In this test:
-
-         1. Computer requests card player does not have. Computer fishes.
-
-         2. Computer requests card player has. Card is transferred.
-               -- Computer requests a card computer does have. Player fishes
-
-         3. Computer requests card player has. Card is transferred.
-               -- Computer requests another card player has, cad is transferred
-               -- Computer requests a card player does have. Computer fishes
-
-
-         In the next test:
-
-         4. Player does not have card, Computer fishes, Computer makes book
-
-         5. Player does have card, Computer fishes and makes one book [ TODO implemented in the next method ]
-         5b. Player does have card, computer makes more than one books [ TODO implement in the next method]
 
         */
+        
+        
 
-        // Need to mock the computer's choice to return some valid value. The computer choice should be checked in another test.
+      /*  // Need to mock the computer's choice to return some valid value. The computer choice should be checked in another test.
         // Only want to mock the selectComputerCardValue method, not the whole class.
         mockStaticPartial(Question_6_Go_Fish.class, "selectComputerCardValue");
 
@@ -327,16 +343,23 @@ public class Question_6_Go_FishTest extends TestCase {
         // Player hand does not change
         ArrayList<String> expectedPlayerHand = newArrayList("7", "8", "9");
         ArrayList<String> expectedPool = newArrayList("A", "3");
-
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
+    
+    
+        String msg = "In a play where Computer requests card player does not have. Computer fishes.";
+    
+        assertTrue(msg + "Computer hand not modified as expected. ", arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(msg + "Player hand not modified as expected. ", arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(msg + "Pool not modified as expected. ", arrayListEqual(expectedPool, pool));
     
     
         // No books made
-        assertEquals(0, playerBooks.size());
-        assertEquals(0, computerBooks.size());
+        assertEquals(msg + " No books should be made.", 0, playerBooks.size());
+        assertEquals(msg + " No books should be made.", 0, computerBooks.size());
     
+    */
+      
+      
+      
     
         // 2. Computer requests card player has, then card player does not have.
 
@@ -355,15 +378,17 @@ public class Question_6_Go_FishTest extends TestCase {
         // Player hand does not have card computer requested
         expectedPlayerHand = newArrayList("A", "2");
         expectedPool = newArrayList("A", "3");
-
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
+    
+        msg = "In a play where Computer requests card player does have, and then card player does not have. Computer fishes.";
+        
+        assertTrue(msg + "Computer hand not modified as expected. ", arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(msg + "Player hand not modified as expected. ", arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(msg + "Pool not modified as expected. ", arrayListEqual(expectedPool, pool));
     
     
         // No books made
-        assertEquals(0, playerBooks.size());
-        assertEquals(0, computerBooks.size());
+        assertEquals(msg + " No books should be made.", 0, playerBooks.size());
+        assertEquals(msg + " No books should be made.", 0, computerBooks.size());
 
         
     
@@ -386,97 +411,240 @@ public class Question_6_Go_FishTest extends TestCase {
         expectedPlayerHand = newArrayList("9");
         expectedPool = newArrayList("A", "3");
 
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
+        assertTrue(arrayListEqual(expectedComputerHand, computerHand));
+        assertTrue(arrayListEqual(expectedPlayerHand, playerHand));
+        assertTrue(arrayListEqual(expectedPool, pool));
     
     
         // No books made
         assertEquals(0, playerBooks.size());
         assertEquals(0, computerBooks.size());
-    
         
-        // TODO 4 and 5. Computer makes book(s), next method
 
     }
 
-
-    public void testComputerTurnMakesBooks() throws Exception {
-
-        /*
+    
+    /*
 
         Example plays covering various scenarios.
 
+         1. Player requests card Opponent does not have. Player fishes.
 
-        In previous test:
+         2. Player requests card Opponent has. Card is transferred.
+               -- Player requests a card Opponent does not have. Player fishes
 
-         1. Computer requests card player does not have. Computer fishes.
+         3. Player requests card Opponent has. Card is transferred.
+               -- Player requests another card Opponent has, card is transferred
+               -- Player requests a card Opponent does have. Player fishes
 
-         2. Computer requests card player has. Card is transferred.
-               -- Computer requests a card computer does have. Player fishes
+         4. Opponent does not have card, Player fishes, Player makes book
 
-         3. Computer requests card player has. Card is transferred.
-               -- Computer requests another card player has, cad is transferred
-               -- Computer requests a card player does have. Computer fishes
+         5. Opponent does have card, transfer, Player does not make book.
+                -- Player requests card Opponent does not have. Player fishes and makes one book
+         
+         6. Opponent does have card, transfer, Player makes book.
+                -- Player requests second card Opponent does not have, Player fishes, does not make book.
 
+         7. Opponent does have card, transfers, Player makes book.
+                -- Player requests second card Opponent does not have, Player fishes, makes second book.
+        
+         8. Opponent does have card, transferred, Player makes book.
+                -- Player requests second card opponent has, transferred, no book.
+                -- Player requests third card Opponent does not have. Player fishes, makes second book.
 
-         In this test:
+         9. Opponent does have card, transferred, Player makes book.
+                -- Player requests second card, transferred, makes book.
+                -- Player requests third card Opponent does not have. Player fishes, no book.
+*/
 
-         4. Player does not have card, Computer fishes, Computer makes book
+    public void testTurn_OpponentDoesNotHave_PlayerFishesNoBook_1() throws Exception {
+        
+        playScenario(new String[]{"A"},         /* Cards computer will request */
+                "Player requests card opponent doesn't have, and has to fish. Does not make book.",  /* Description of play */
+                newArrayList("A", "2", "3"),            /* initial computer hand */
+                newArrayList("7", "8", "9"),            /* initial player hand */
+                newArrayList("Q", "A", "3"),            /* initial pool */
+                newArrayList(),                         /* initial books */
+                newArrayList(),                         /* initial opponent books */
+                newArrayList("A", "2", "3", "Q"),       /* Expected computer hand after turn */
+                newArrayList("7", "8", "9"),            /* Expected player hand after turn */
+                newArrayList("A", "3"),                 /* Expected pool after turn */
+                newArrayList(),                         /* Expected player books after turn */
+                newArrayList()                          /* Expected computer books after turn */
+        );
+    }
+    
+    public void testTurn_OpponentDoesHave_ThenDoesNotHave_PlayerFishesNoBook_2() throws Exception {
+        
+        playScenario(new String[]{"3", "7"},         /* Cards computer will request */
+                "Player requests card opponent does have. Card transferred. Player requests card opponent doesn't have, and has to fish. Does not make book.",  /* Description of play */
+                newArrayList("A", "2", "3"),            /* initial player hand */
+                newArrayList("3", "8", "9"),            /* initial opponent hand */
+                newArrayList("A", "2", "3"),            /* initial pool */
+                newArrayList(),                         /* initial books */
+                newArrayList(),                         /* initial opponent books */
+                newArrayList("A", "2", "3", "3", "A"),       /* Expected player hand after turn */
+                newArrayList("8", "9"),            /* Expected opponent hand after turn */
+                newArrayList("2", "3"),                 /* Expected pool after turn */
+                newArrayList(),                         /* Expected player books after turn */
+                newArrayList()                          /* Expected opponent books after turn */
+        );
+    }
+    
+    public void testTurn_OpponentDoesHave_ThenDoesHave_ThenDoesNotHave_PlayerFishesNoBook_3() throws Exception {
+        
+        playScenario(new String[]{"2", "3", "A"},         /* Cards computer will request */
+                "Player requests card opponent does have. Card transferred. Player requests another card opponent has, card is transferred. Player requests card opponent doesn't have, and has to fish. Does not make book.",  /* Description of play */
+                newArrayList("A", "2", "3", "Q"),            /* initial player hand */
+                newArrayList("3", "8", "9", "2", "2"),            /* initial opponent hand */
+                newArrayList("A", "2", "3"),            /* initial pool */
+                newArrayList(),                         /* initial books */
+                newArrayList(),                         /* initial opponent books */
+                newArrayList("A", "2", "3", "Q", "2", "2", "3", "A"),       /* Expected player hand after turn */
+                newArrayList("8", "9"),            /* Expected opponent hand after turn */
+                newArrayList("2", "3"),                 /* Expected pool after turn */
+                newArrayList(),                         /* Expected player books after turn */
+                newArrayList()                          /* Expected opponent books after turn */
+        );
+    }
+    
+    public void testTurn_OpponentDoesNotHave_PlayerFishesMakesBook_4() throws Exception {
+        
+        playScenario(new String[]{"2", "3", "A"},         /* Cards player will request */
+                "Player requests card opponent does have. Card transferred. Player requests card opponent doesn't have, and has to fish. Does not make book.",  /* Description of play */
+                newArrayList("A", "2", "3", "Q"),            /* initial player hand */
+                newArrayList("3", "8", "9", "2", "2"),            /* initial opponent hand */
+                newArrayList("A", "2", "3"),            /* initial pool */
+                newArrayList(),                         /* initial books */
+                newArrayList(),                         /* initial opponent books */
+                newArrayList("A", "2", "3", "Q", "2", "2", "3", "A"),       /* Expected player hand after turn */
+                newArrayList("8", "9"),            /* Expected opponent hand after turn */
+                newArrayList("2", "3"),                 /* Expected pool after turn */
+                newArrayList(),                         /* Expected player books after turn */
+                newArrayList()                          /* Expected opponent books after turn */
+        );
+    }
+    
+    
+    
+    // 5. Player does not have card, transferred, computer fishes, computer makes book. end.
+        
+         playScenario(new String[]{"A"},         /* Cards computer will request */
+                 "Player requests a card opponent doesn't have, goes fishing, and makes book.",  /* Description of play */
+                 newArrayList("A", "Q", "Q", "8", "Q"),  /* initial computer hand */
+                 newArrayList("3", "8", "9"),            /* initial player hand */
+                 newArrayList("Q", "A", "3"),            /* initial pool */
+                 newArrayList(),                         /* initial books */
+                 newArrayList(),                         /* initial opponent books */
+                 newArrayList("A", "8"),                 /* Expected computer hand after turn */
+                 newArrayList("3", "8", "9"),            /* Expected player hand after turn */
+                 newArrayList("A", "3"), /* Expected pool after turn */
+                 newArrayList("Q"), /* Expected player books after turn */
+                 newArrayList() /* Expected computer books after turn */
+         );
+         
+        //  6. Player does have card, transferred, computer makes book. Computer requests second card, computer fishes, end.
+        
+        playScenario(new String[]{"A"},         /* Cards computer will request */
+                "Computer requests a card player does have, makes book. Computer requests card player does not have, goes fishing, and makes book.\n",  /* Description of play */
+                newArrayList("A", "Q", "Q", "8", "Q"),  /* initial computer hand */
+                newArrayList("3", "8", "9"),            /* initial player hand */
+                newArrayList("Q", "A", "3"),            /* initial pool */
+                newArrayList(),                         /* initial player books */
+                newArrayList(),                         /* initial opponent books */
+                newArrayList("A", "8"),                 /* Expected computer hand after turn */
+                newArrayList("3", "8", "9"),            /* Expected player hand after turn */
+                newArrayList("A", "3"), /* Expected pool after turn */
+                newArrayList("Q"), /* Expected books after turn */
+                newArrayList()
+        );
 
-         5. Player does have card, Computer fishes and makes one book [ TODO Not implemented yet ]
-         5b. Player does have card, computer makes more than one books [ TODO not implemented yet]
-
-        */
-
-
-        // Need to mock the computer's choice to return some valid value. The computer choice method should be checked in another test.
-        // Only want to mock the selectComputerCardValue method, not the whole class.
-        mockStaticPartial(Question_6_Go_Fish.class, "selectComputerCardValue");
-
-
-        // 4. Player requests card computer doesn't have, goes fishing, and makes book.
-
-
-        // Set up expected computer card selections
-        expect(Question_6_Go_Fish.selectComputerCardValue()).andReturn("A");
-        replay(Question_6_Go_Fish.class);
-
-
-        pool = newArrayList("Q", "A", "3");
-        computerHand = newArrayList("A", "Q", "Q", "8", "Q");
-        playerHand = newArrayList("3", "8", "9");
-        computerBooks = newArrayList();
-
-        // Play one turn
-
-        computerTurn();
-
-        // Hand got card from pool, made book of "Q"
-        ArrayList<String> expectedComputerHand = newArrayList("A", "8");
-        ArrayList<String> expectedPool = newArrayList("A", "3");
-        // Unchanged
-        ArrayList<String> expectedPlayerHand = newArrayList("3", "8", "9");
-
-        ArrayList<String> expectedBooks = newArrayList("Q");
-
-
-        assertTrue(stringArrayListEqual(expectedPlayerHand, playerHand));
-        assertTrue(stringArrayListEqual(expectedComputerHand, computerHand));
-        assertTrue(stringArrayListEqual(expectedPool, pool));
-
-
-        assertTrue(stringArrayListEqual(expectedBooks, computerBooks));
-
-
-        // 5 and 5b.
-
-        fail("Write test for computer making one book");
-        fail("Write test for computer making more than one book");
+//         7. Player does have card, player transfers, computer makes book. Computer requests second card, computer fishes, makes second book.
+// [ TODO not implemented ]
+//
+//         8. Player does have card, transferred, computer makes book. Computer requests second card, transferred, no book. computer fishes, makes second book.
+// [ TODO not implemented ]
+//
+//         9. Player does have card, transferred, computer makes book. Computer requests second card, transferred, makes book. computer fishes, no book.
+// [ TODO not implemented ]
+//
+    
 
     }
-
-
+    
+    
+    
+    
+    private void playScenario(String[] inputs, String playDescription, ArrayList<String> startPlayerHand, ArrayList<String> startOpponentHand, ArrayList<String> startPool, ArrayList<String> startBooks, ArrayList<String> startOpponentBooks,
+                              ArrayList<String> expectedPlayerHand, ArrayList<String> expectedOpponentHand, ArrayList<String> expectedPool, ArrayList<String> expectedPlayerBooks, ArrayList<String> expectedOpponentBooks) {
+        
+        
+        // Player is the player.
+    
+        reset(Question_6_Go_Fish.class);
+    
+        // Set up expected computer card selections
+        for (String i : inputs) {
+            expect(InputUtils.stringInput(anyString())).andReturn(i);
+        }
+    
+        replay(Question_6_Go_Fish.class);
+    
+    
+        pool = startPool;
+        playerHand = startPlayerHand;
+        computerHand = startOpponentHand;
+        playerBooks = startBooks;
+        computerBooks = startOpponentBooks;
+        
+        playerTurn();
+    
+        String msg = "Human player is playing. Computer is their opponent. " + playDescription + "\n";
+        
+        assertTrue(msg + " The player's hand was not as expected.", arrayListEqual(expectedPlayerHand, playerHand, true));
+        assertTrue(msg + " The computers's hand was not as expected.", arrayListEqual(expectedOpponentHand, computerHand, true));
+        assertTrue(msg + " The pool was not as expected.", arrayListEqual(expectedPool, pool, true));
+        assertTrue(msg + " The player's books are not as expected.", arrayListEqual(expectedPlayerBooks, playerBooks, true));
+        assertTrue(msg + " The computers's books are not as expected.", arrayListEqual(expectedOpponentBooks, computerBooks, true));
+        
+        
+        // Computer is the player.
+    
+        mockStaticPartial(Question_6_Go_Fish.class, "selectComputerCardValue");
+    
+        reset(Question_6_Go_Fish.class);
+    
+        // Set up expected computer card selections
+        for (String i : inputs) {
+            expect(Question_6_Go_Fish.selectComputerCardValue()).andReturn(i);
+        }
+    
+        replay(Question_6_Go_Fish.class);
+        
+        pool = startPool;
+        computerHand = startPlayerHand;
+        playerHand = startOpponentHand;
+        computerBooks = startBooks;
+        playerBooks = startOpponentBooks;
+        
+        
+        computerTurn();
+    
+        msg = "Computer is playing. Human is their opponent. " + playDescription + "\n";
+    
+        assertTrue(msg + " The computer's hand was not as expected.", arrayListEqual(expectedPlayerHand, playerHand, true));
+        assertTrue(msg + " The player's hand was not as expected.", arrayListEqual(expectedOpponentHand, computerHand, true));
+        assertTrue(msg + " The pool was not as expected.", arrayListEqual(expectedPool, pool, true));
+        assertTrue(msg + " The computer's books are not as expected.", arrayListEqual(expectedPlayerBooks, computerBooks, true));
+        assertTrue(msg + " The player's books are not as expected.", arrayListEqual(expectedOpponentBooks, computerBooks, true));
+    
+    
+    
+    
+    }
+    
+    
+    
     public void testSelectComputerCardValue() throws Exception {
 
 
@@ -508,8 +676,8 @@ public class Question_6_Go_FishTest extends TestCase {
 
         goFish(exampleHand);
 
-        assertTrue(stringArrayListEqual(exampleHand, exampleHandAfterFish));
-        assertTrue(stringArrayListEqual(pool, poolAfterFish));
+        assertTrue(arrayListEqual(exampleHand, exampleHandAfterFish));
+        assertTrue(arrayListEqual(pool, poolAfterFish));
 
         // Test with empty pool. Don't modify hand or pool. Should not crash :)
 
@@ -519,7 +687,7 @@ public class Question_6_Go_FishTest extends TestCase {
 
         goFish(exampleHand);
 
-        assertTrue(stringArrayListEqual(exampleHand, exampleHandAfterFish));
+        assertTrue(arrayListEqual(exampleHand, exampleHandAfterFish));
 
 
     }
@@ -547,8 +715,8 @@ public class Question_6_Go_FishTest extends TestCase {
         ArrayList<String> expectedToHandAfter = newArrayList("J", "Q", "8", "4");
 
         transfer("4", fromHand, toHand);
-        assertTrue(stringArrayListEqual(fromHand, expectedFromHandAfter));
-        assertTrue(stringArrayListEqual(toHand, expectedToHandAfter));
+        assertTrue(arrayListEqual(fromHand, expectedFromHandAfter));
+        assertTrue(arrayListEqual(toHand, expectedToHandAfter));
 
 
 
@@ -561,8 +729,8 @@ public class Question_6_Go_FishTest extends TestCase {
         expectedToHandAfter = newArrayList("J", "Q", "8", "2", "2", "2");
 
         transfer("2", fromHand, toHand);
-        assertTrue(stringArrayListEqual(fromHand, expectedFromHandAfter));
-        assertTrue(stringArrayListEqual(toHand, expectedToHandAfter));
+        assertTrue(arrayListEqual(fromHand, expectedFromHandAfter));
+        assertTrue(arrayListEqual(toHand, expectedToHandAfter));
 
 
 
@@ -578,21 +746,18 @@ public class Question_6_Go_FishTest extends TestCase {
 
         ArrayList<String> expectedHand2 = newArrayList("4", "5");
         ArrayList<String> expectedBooks2 = newArrayList("2");
-
-
+        
         makeBooks(hand, books);
 
-        assertTrue(stringArrayListEqual(hand, expectedHand));
-        assertTrue(stringArrayListEqual(books, expectedBooks));
+        assertTrue(arrayListEqual(hand, expectedHand));
+        assertTrue(arrayListEqual(books, expectedBooks));
 
         // No books left to make. Verify nothing changes.
-
         makeBooks(hand, books);
 
-        assertTrue(stringArrayListEqual(hand, expectedHand2));
-        assertTrue(stringArrayListEqual(books, expectedBooks2));
-
-
+        assertTrue(arrayListEqual(hand, expectedHand2));
+        assertTrue(arrayListEqual(books, expectedBooks2));
+        
         // Make more than one book
 
         ArrayList<String> hand2books = newArrayList("2", "3", "3", "4", "2", "2", "3", "3", "5", "2");
@@ -603,8 +768,8 @@ public class Question_6_Go_FishTest extends TestCase {
 
         makeBooks(hand2books, books2books);
 
-        assertTrue(stringArrayListEqual(hand2books, expectedHand2books));
-        assertTrue(stringArrayListEqual(books2books, expectedBooks2books));
+        assertTrue(arrayListEqual(hand2books, expectedHand2books));
+        assertTrue(arrayListEqual(books2books, expectedBooks2books));
 
 
     }
@@ -630,14 +795,17 @@ public class Question_6_Go_FishTest extends TestCase {
 
     }
 
+    
     public void testDisplayHand() throws Exception {
         //pass - look at the output and decide if it looks ok.
     }
 
+    
     public void testPrintGameStats() throws Exception {
         //TODO is a test needed? Look at your program output and decide if it looks ok.
     }
 
+    
     public void testCardValueInputValidInput() throws Exception {
 
         playerHand = newArrayList("A", "2", "4", "7", "9");

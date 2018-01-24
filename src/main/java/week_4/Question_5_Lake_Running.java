@@ -66,7 +66,7 @@ public class Question_5_Lake_Running {
 
         while (moreLakes())  {
             String name = stringInput("Enter lake name");
-            double time = doubleInput("Enter time for running lake " + name);
+            double time = positiveDoubleInput("Enter time for running lake " + name);
             addLake(name, time);
         }
     

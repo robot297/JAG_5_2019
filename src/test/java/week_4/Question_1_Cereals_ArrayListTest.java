@@ -27,14 +27,14 @@ public class Question_1_Cereals_ArrayListTest {
         // And when the favorite breakfast is added, there should be 4 items in the list
         assertEquals("Add your favorite breakfast food to the ArrayList", 4, q1.cereals.size());
         
-        // Check that all elements of ArrayList are printed
+        // Check that all elements of ArrayList are printed. Don't care what order.
         for (String c : q1.cereals) {
             assertTrue("Print all of the items in the ArrayList", out.contains(c));
         }
         
 
         // Is a message confirming "Special K is in the ArrayList" is printed
-        assertTrue("Test if Special K is in the array list and print the exact message requested if so", out.toLowerCase().contains("special k is in the arraylist"));
+        assertTrue("Test if Special K is in the ArrayList and print the exact message requested if so", out.toLowerCase().contains("special k is in the arraylist"));
 
     }
 }

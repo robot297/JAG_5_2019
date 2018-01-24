@@ -23,23 +23,6 @@ public class Question_2_Dice_Rolls_ArrayListTest {
     
 
     @Test
-    public void testUserWantsToContinue() throws Exception {
-
-        mockStatic(InputUtils.class);
-        expect(InputUtils.yesNoInput(anyString()))
-                .andReturn(true)        // Provide two return values, plan to call the wantsToContinue method twice
-                .andReturn(false);
-
-        replay(InputUtils.class);
-
-        Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();
-
-        assertTrue(q2.userWantsToContinue());
-        assertFalse(q2.userWantsToContinue());
-
-    }
-
-    @Test
     public void testRoll() throws Exception {
 
         Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();
@@ -60,8 +43,15 @@ public class Question_2_Dice_Rolls_ArrayListTest {
 
         ArrayList<Integer> actual = q2.roll(4);
 
-        assertTrue("Roll the given number of dice, store each number in an ArrayList, and return it. ", ArrayListUtils.intArrayListEqual(expected, actual));
+        assertTrue("Use the Random rnd variable provided in the program. Don't create a new Random. " +
+                "\nRoll the given number of dice, store each number in an ArrayList, and return it. ",
+                ArrayListUtils.intArrayListEqual(expected, actual));
 
+        
+        ArrayList<Integer> actualEmpty = q2.roll(0);
+        assertEquals("If the user rolls 0 dice, return an empty ArrayList. You should not generate any random numbers",
+                0, actualEmpty.size());
+        
     }
 
     @Test
@@ -72,12 +62,12 @@ public class Question_2_Dice_Rolls_ArrayListTest {
         // Add up 3 values
         ArrayList<Integer> example = newArrayList(4, 5, 3);
         int total = q2.diceTotal(example);
-        assertEquals("If there are 3 dice values in the array list, for example [4, 5, 3], the total should be 12.", 12, total);
+        assertEquals("If there are 3 dice values in the ArrayList, for example [4, 5, 3], the total should be 12.", 12, total);
     
         // Add up 2 values
         example = newArrayList(4, 3);
         total = q2.diceTotal(example);
-        assertEquals("If the dice have values 4 and 4, the total should be 7", 7, total);
+        assertEquals("If the dice have values 4 and 3, the total should be 7", 7, total);
         
         // Null ArrayList should return 0
         assertEquals("If the ArrayList is null, return 0", 0, q2.diceTotal(null));
@@ -93,6 +83,7 @@ public class Question_2_Dice_Rolls_ArrayListTest {
     public void testAllSameValue() throws Exception {
 
         Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();
+        
         ArrayList<Integer> example = newArrayList(4, 5, 3);
         assertFalse("allSameValue called with an ArrayList of 4,5,3 should return false", q2.allSameValue(example));
 
@@ -104,8 +95,10 @@ public class Question_2_Dice_Rolls_ArrayListTest {
     
         example = newArrayList(1, 1, 1);
         assertTrue("allSameValue called with an ArrayList of 1, 1, 1 should return true", q2.allSameValue(example));
-    
-    
+        
+        example = newArrayList(3, 1, 1, 1);
+        assertFalse("allSameValue called with an ArrayList of 3, 1, 1, 1 should return false", q2.allSameValue(example));
+        
         example = newArrayList(4);
         assertTrue("allSameValue called with an ArrayList of 4 should return true", q2.allSameValue(example));
 
@@ -114,8 +107,7 @@ public class Question_2_Dice_Rolls_ArrayListTest {
         assertFalse("allSameValue called with an empty ArrayList should return false", q2.allSameValue(example));
 
         // null list, returns false
-        example = null;
-        assertFalse("allSameValue called with a null ArrayList should return false", q2.allSameValue(example));
+        assertFalse("allSameValue called with a null ArrayList should return false", q2.allSameValue(null));
 
     }
 }

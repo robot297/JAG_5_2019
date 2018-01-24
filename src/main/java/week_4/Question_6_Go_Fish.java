@@ -15,13 +15,17 @@ import static input.InputUtils.*;
 
  "Seven cards are dealt from a standard 52-card deck to each player.
  The remaining cards are spread out in a disorderly pile referred to as the "pool".
+ 
  The player whose turn it is to play asks another player for his or her cards of a
  particular face value. For example Alice may ask, "Bob, do you have any threes?"
  Alice must have at least one card of the rank she requested. Bob must hand
- over all cards of that rank if possible. If he has none, Bob tells Alice to "go fish"
- and Alice draws a card from the pool and places it in her own hand.
+ over all cards of that rank if possible.
+ 
+ Alice may then request another card from Bob.
+ 
+ If he has none, Bob tells Alice to "go fish" and Alice draws a card from the pool and places it in her own hand.
 
- Then it is the next player's turn – unless the card Alice drew is the card she asked for,
+ Then it is the next player's turn – unless the card Alice drew from the pool is the card she asked for,
  in which case she shows it to the other players, and she gets another turn. When any player at
  any time has all four cards of one face value, it forms a book, and the cards must be placed
  face up in front of that player.
@@ -55,6 +59,8 @@ public class Question_6_Go_Fish {
     // Players' names
     final static String HUMAN = "Human";
     final static String COMPUTER = "Computer";
+    
+    
 
     public static void main(String[] args) {
 
@@ -123,7 +129,7 @@ public class Question_6_Go_Fish {
         // If computer does not have this card, human goes fishing
 
         // If computer does have card, take all cards of this values from computer
-        // and add to hand. Player gets another go.
+        // and add to hand. Player gets another chance to request cards from computer.
 
         // TODO add some messages for the user so they know what's happening.
 
@@ -179,14 +185,14 @@ public class Question_6_Go_Fish {
     public static String selectComputerCardValue() {
         // TODO Select a valid card value from computerHand. A basic computer
         // strategy could be to select a card at random, or to request the value of the first card in their hand.
-        // You will need to write a test for this method.
+        // Optional: write your own test for this method.
         return null;
     }
 
 
     public static void goFish(ArrayList<String> hand) {
         //TODO remove card from pool and add to this hand.
-        // The cards should be shuffled.
+        // The cards should already be shuffled.
         // Take the FIRST card from the pool and add it to the end of the hand.
         //TODO test that the pool is not empty. If pool is empty, don't modify hand or pool.
         //This method does not need to return anything.
@@ -224,7 +230,7 @@ public class Question_6_Go_Fish {
 
 
     public static boolean gameOver() {
-        // TODO test if the pool is empty.
+        // TODO test if the pool is empty. Return true if the pool is empty, false otherwise.
         return false;
 
     }
@@ -271,6 +277,7 @@ public class Question_6_Go_Fish {
             return card;
         }
     }
+    
 
     public static void printGameStats() {
 

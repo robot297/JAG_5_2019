@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import static input.InputUtils.positiveIntInput;
+import static input.InputUtils.yesNoInput;
 
 /**
 
@@ -16,8 +17,9 @@ import static input.InputUtils.positiveIntInput;
  Display the total of all the dice rolled.
 
  In some games, rolling the same number on all dice has a special meaning.
- In your program, check if all die have the same value, and print a message
- if all dice show the same value.
+ In your program, check if all dice have the same value, and print a message
+ if all the dice show the same value.  In other words, you'll need a method that
+ tests if all of the values in an ArrayList are the same.
  */
 
 public class Question_2_Dice_Rolls_ArrayList {
@@ -49,22 +51,14 @@ public class Question_2_Dice_Rolls_ArrayList {
             // Print the dice values rolled
             System.out.println("The dice have the values: " + diceValues);
             System.out.println("The total of all dice: " + diceTotal(diceValues));
+          
             if (allSameValue(diceValues)) {
                 System.out.println(SAME_VALUES);
             }
             
-        } while (userWantsToContinue());
+        } while (yesNoInput("Do you want to roll again?"));
     }
     
-    
-    public boolean userWantsToContinue() {
-
-        // TODO Ask the user if they want to roll again. Return true if so, return false if not
-        // TODO Use the yesNoInput method in InputUtils.
-
-        return false;    // Replace with your code
-
-    }
 
 
     public ArrayList<Integer> roll(int numberOfDice) {
@@ -80,7 +74,7 @@ public class Question_2_Dice_Rolls_ArrayList {
 
         // TODO add up all of the values in the ArrayList and return this total.
         // TODO this should still work for any number of dice in the diceValues ArrayList.
-        // TODO if the diceValues ArrayList is empty or null, return 0 (zero)
+        // TODO if the diceValues ArrayList is empty or null, return 0 (zero). Hint: test if the ArrayList is null first
 
         return 0;  // Replace with your code.
         
@@ -91,7 +85,8 @@ public class Question_2_Dice_Rolls_ArrayList {
 
         // TODO return true if all of the values in the diceValues ArrayList are the same.
         // TODO return false for an empty or null ArrayList.
-        // TODO this method should work for 1 dice, 2 dice, 3 dice, 100 dice...
+        // TODO this method should work for 0 dice, 1 dice, 2 dice, 3 dice, 100 dice...
+        // TODO if the diceValues ArrayList is empty or null, return false.
 
        return false; // Replace with your code
 

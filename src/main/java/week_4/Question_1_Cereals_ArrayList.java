@@ -3,11 +3,11 @@ package week_4;
 import java.util.ArrayList;
 
 /**
- *  ArrayList Practice
+ *  ArrayList practice.
 
- *	Remove Oatmeal from the ArrayList.
+ *	Remove "Oatmeal" from the ArrayList.
  *	Add the name of your favorite breakfast food to the ArrayList.
- *	Add “Cornflakes” to the ArrayList.
+ *	Add "Cornflakes" to the ArrayList.
  *	Display all of the items in the ArrayList.
  *	Print a message if the ArrayList contains “Special K”. Print a different message if it does not contain "Special K".
  *	(optional) non-programming question: what does Captain Crunch have to do with computer hacking?
@@ -30,7 +30,7 @@ public class Question_1_Cereals_ArrayList {
         cereals.add("Oatmeal");
 
 
-       	// TODO Remove Oatmeal from the ArrayList.
+       	// TODO Remove "Oatmeal" from the ArrayList.
         
         // TODO	Add the name of your favorite breakfast cereal (or favorite breakfast food) to the ArrayList.
         
