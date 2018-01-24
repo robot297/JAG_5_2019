@@ -52,7 +52,10 @@ public class Question_3_Recycling_Truck_Arrays {
 
     }
 
-    // Ask user for number of crates for each house. Store in array and return this array.
+    // Create a new int[] array. The array should be the same size, as number of houses.
+    // Ask user for number of crates for each house. Save in the array.
+    // Return this array.
+    // This method should work for any number of houses.
     public int[] getRecyclingPerHouse(int houses) {
 
         // TODO ask user for input.
