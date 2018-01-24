@@ -56,7 +56,9 @@ Extend this program to:
 
 Ask user for a month, and snowfall amount, and add this data to HashMap provided.
 Check if month is already in HashMap before adding data.
-If so, warn user that they will overwrite data, and ask for confirmation before writing.
+  If so, warn user that they will overwrite data, and ask for confirmation before writing.
+  If the user does not want to overwrite data, the addToHashMap method should do nothing. 
+
 
 For month names, assume that all month names will be the full name, with the
 initial letter capitalized, and will always be spelled the same, example "May" or "September"
