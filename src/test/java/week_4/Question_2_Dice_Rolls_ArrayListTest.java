@@ -45,7 +45,7 @@ public class Question_2_Dice_Rolls_ArrayListTest {
 
         assertTrue("Use the Random rnd variable provided in the program. Don't create a new Random. " +
                 "\nRoll the given number of dice, store each number in an ArrayList, and return it. ",
-                ArrayListUtils.intArrayListEqual(expected, actual));
+                ArrayListUtils.arrayListEqual(expected, actual));
 
         
         ArrayList<Integer> actualEmpty = q2.roll(0);

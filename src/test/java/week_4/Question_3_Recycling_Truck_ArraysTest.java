@@ -4,10 +4,10 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 
-import static junit.framework.Assert.assertTrue;
 import static org.junit.Assert.assertArrayEquals;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Question_3_Recycling_Truck_ArraysTest {
 
