@@ -96,7 +96,8 @@ public class Question_6_Go_Fish {
 
     public static ArrayList<String> createDeck() {
         // TODO create an array with 52 strings, each representing a card value in a standard deck.
-        // Your strings can be "A" "2", "3", "4" ... since suits don't matter in this game.
+        // Your strings should be "A" "2", "3", "4" ... since suits don't matter in this game.
+        // There will be 4 "A" and 4 "2" and 4 "3" ....
         // Use the static cardValues ArrayList.
         // Shuffle the deck.
         return null;
@@ -211,6 +212,7 @@ public class Question_6_Go_Fish {
         // example: if card = "5" then remove all "5" from fromHand and add them to toHand.
         // example: card = "5" , fromHand = [ 5, 6, 7, 2, 5 ],  toHand = [ 1, 2 ]
         // After transfer, fromHand = [ 6, 7, 2 ], toHand = [ 1, 2, 5, 5 ]
+        // You do not need to return anything - just modify the fromHand and toHand.
 
     }
 
@@ -225,6 +227,8 @@ public class Question_6_Go_Fish {
         // Your method should work if there is more than one book in the hand
         // Example: ["6","6","A","6","2","A","6","A","7","A"] and books is ["4", "Q"]
         // Hand should become ["2","7"] and books = ["4","Q","6", "A"]
+        
+        // You don't need to return anything.
 
     }
 
@@ -282,7 +286,11 @@ public class Question_6_Go_Fish {
     public static void printGameStats() {
 
         // TODO Display if human or computer wins by examining computerBooks and playerBooks. - who has the most books?
-        // Display list of books each player has, and the total number of books.
+        // Display a list of books each player has, and the total number of books.
+        
+        // Also display the name of the winning player in this format: "Human is the winner" or "Computer is the winner".
+        
+        
 
     }
 
