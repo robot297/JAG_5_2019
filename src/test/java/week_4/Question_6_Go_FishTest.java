@@ -60,7 +60,6 @@ public class Question_6_Go_FishTest  {
         
     }
     
-    
     @Test(timeout=3000)
     public void testCreatePool() throws Exception {
         
@@ -302,7 +301,7 @@ public class Question_6_Go_FishTest  {
     }
     
     
-    // Not a test method.
+    // Helper methods for the above tests method.
     private void playScenario(String[] inputs, String playDescription, ArrayList<String> startPlayerHand, ArrayList<String> startOpponentHand, ArrayList<String> startPool, ArrayList<String> startBooks, ArrayList<String> startOpponentBooks,
                               ArrayList<String> expectedPlayerHand, ArrayList<String> expectedOpponentHand, ArrayList<String> expectedPool, ArrayList<String> expectedPlayerBooks, ArrayList<String> expectedOpponentBooks) {
         
@@ -370,7 +369,6 @@ public class Question_6_Go_FishTest  {
     @Test(timeout=3000)
     public void testSelectComputerCardValue() throws Exception {
         
-        
         // This is not a very satisfactory test, since the details of how
         // the computer chooses are not yet implemented.
         // You'll can improve  this test after you implement your selectComputerCardValue method,
@@ -381,7 +379,7 @@ public class Question_6_Go_FishTest  {
         // Select 100 times, ensure card selected is one from the hand.
         for (int x = 0 ; x < 100 ; x++) {
             String card = selectComputerCardValue();
-            assertTrue(computerHand.contains(card));
+            assertTrue("The computer's selection should be one of the cards in the computer's hand", computerHand.contains(card));
         }
     }
     
@@ -401,7 +399,7 @@ public class Question_6_Go_FishTest  {
         assertTrue(msg + " The hand was not changed correctly", arrayListEqual(exampleHand, exampleHandAfterFish, true));
         assertTrue(msg + " The pool was not changed correctly.", arrayListEqual(pool, poolAfterFish, true));
         
-        // Test with empty pool. Don't modify hand or pool. Should not crash :)
+        // Test with empty pool. Don't modify hand or pool. Should not crash
         
         pool = new ArrayList<>();
         exampleHand = newArrayList("4", "2", "5");
@@ -411,26 +409,27 @@ public class Question_6_Go_FishTest  {
         
         assertTrue("If the pool is empty, don't modify the player's hand.", arrayListEqual(exampleHand, exampleHandAfterFish, true));
         
-        
     }
+    
     
     @Test(timeout=3000)
     public void testHandHasCard() throws Exception {
         
         ArrayList<String> exampleHand = newArrayList("4", "2", "5");
-        assertTrue(handHasCard(exampleHand, "4"));
-        assertTrue(handHasCard(exampleHand, "2"));
-        assertTrue(handHasCard(exampleHand, "5"));
+        String msg = "Return true if a hand contains a card, false otherwise. Example: if the hand is [\"4\", \"2\", \"5\"] return true for \"4\" or \"5\". Return false for \"6\" or \"Q\"";
+        assertTrue(msg, handHasCard(exampleHand, "4"));
+        assertTrue(msg, handHasCard(exampleHand, "2"));
+        assertTrue(msg, handHasCard(exampleHand, "5"));
         
-        assertFalse(handHasCard(exampleHand, "Q"));
-        assertFalse(handHasCard(exampleHand, "6"));
+        assertFalse(msg, handHasCard(exampleHand, "Q"));
+        assertFalse(msg, handHasCard(exampleHand, "6"));
         
     }
     
     @Test(timeout=3000)
     public void testTransfer() throws Exception {
         
-        //Transfer 4
+        //Transfer "4"
         
         ArrayList<String> fromHand = newArrayList("4", "2", "2", "5", "2");
         ArrayList<String> expectedFromHandAfter = newArrayList("2", "2", "5", "2");
@@ -519,12 +518,12 @@ public class Question_6_Go_FishTest  {
         computerBooks = newArrayList("A", "2", "4", "7", "9", "K", "Q", "J");
         playerBooks = newArrayList("3", "5", "6", "8", "10");
         
-        assertEquals(COMPUTER, identifyWinner());
+        assertEquals("If the computer has more books than the human player, return COMPUTER as the winner", COMPUTER, identifyWinner());
         
         computerBooks = newArrayList("A", "2", "4", "7", "9");
         playerBooks = newArrayList("3", "5", "6", "8", "10" , "K", "Q", "J");
         
-        assertEquals(HUMAN, identifyWinner());
+        assertEquals("If the human player has more books than the human player, return HUMAN as the winner", HUMAN, identifyWinner());
         
     }
     
@@ -602,7 +601,7 @@ public class Question_6_Go_FishTest  {
         
         String cardSelection = cardValueInput();
         
-        assertEquals("7", cardSelection);
+        assertEquals("If player has entered a valid card from their hand, return this card.", "7", cardSelection);
         
     }
     
@@ -626,7 +625,7 @@ public class Question_6_Go_FishTest  {
         String cardSelection = cardValueInput();
         
         // All of the invalid input should be ignored, and the last, valid, input will be returned.
-        assertEquals("7", cardSelection);
+        assertEquals("Do not accept card values that are not in the player's hand.", "7", cardSelection);
         
     }
     
