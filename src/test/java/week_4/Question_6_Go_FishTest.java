@@ -35,6 +35,7 @@ import static week_4.Question_6_Go_Fish.*;
 @PrepareForTest({InputUtils.class, Question_6_Go_Fish.class})
 public class Question_6_Go_FishTest  {
     
+    
     @Test(timeout=3000)
     public void testCreateDeck() throws Exception {
         
@@ -528,6 +529,7 @@ public class Question_6_Go_FishTest  {
     }
     
     
+    @Test(timeout=3000)
     public void testDisplayHand() throws Exception {
         
         ArrayList<String> example = newArrayList("A", "3", "Q");
@@ -545,6 +547,7 @@ public class Question_6_Go_FishTest  {
     }
     
     
+    @Test(timeout=3000)
     public void testPrintGameStats() throws Exception {
         
         playerBooks = newArrayList("A", "9", "7");
@@ -591,6 +594,7 @@ public class Question_6_Go_FishTest  {
     }
     
     
+    @Test(timeout=3000)
     public void testCardValueInputValidInput() throws Exception {
         
         playerHand = newArrayList("A", "2", "4", "7", "9");
@@ -606,6 +610,7 @@ public class Question_6_Go_FishTest  {
     }
     
     
+    @Test(timeout=3000)
     public void testCardValueInputInvalidInput() throws Exception {
         
         

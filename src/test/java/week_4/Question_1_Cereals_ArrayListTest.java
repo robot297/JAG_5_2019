@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class Question_1_Cereals_ArrayListTest {
     
-    @Test
+    @Test(timeout=3000)
     public void testCereals() throws Exception {
 
         Question_1_Cereals_ArrayList q1 = new Question_1_Cereals_ArrayList();

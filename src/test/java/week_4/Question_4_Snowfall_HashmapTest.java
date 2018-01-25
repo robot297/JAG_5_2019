@@ -20,11 +20,11 @@ import static org.powermock.api.easymock.PowerMock.replay;
 @PrepareForTest(InputUtils.class)
 public class Question_4_Snowfall_HashmapTest {
 
-    double delta = 0.0001;
+    private double delta = 0.0001;
 
 
-    @Test
-    public void testAddToHashmap() throws Exception {
+    @Test(timeout=3000)
+    public void testAddToHasMmap() throws Exception {
 
 
         Question_4_Snowfall_HashMap q4 = new Question_4_Snowfall_HashMap();
@@ -73,7 +73,7 @@ public class Question_4_Snowfall_HashmapTest {
 
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testMonthInHashMap() throws Exception {
 
         Question_4_Snowfall_HashMap q4 = new Question_4_Snowfall_HashMap();
@@ -85,11 +85,11 @@ public class Question_4_Snowfall_HashmapTest {
 
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testTotalSnow() throws Exception {
 
         Question_4_Snowfall_HashMap q4 = new Question_4_Snowfall_HashMap();
-        q4.snowfall = new HashMap<String, Double>();
+        q4.snowfall = new HashMap<>();
         q4.snowfall.put("jan", 6.1);
         q4.snowfall.put("feb", 7.8);
         q4.snowfall.put("mar", 2.3);
@@ -98,11 +98,11 @@ public class Question_4_Snowfall_HashmapTest {
 
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testMaxSnow() throws Exception {
 
         Question_4_Snowfall_HashMap q4 = new Question_4_Snowfall_HashMap();
-        q4.snowfall = new HashMap<String, Double>();
+        q4.snowfall = new HashMap<>();
         q4.snowfall.put("jan", 6.1);
         q4.snowfall.put("feb", 7.8);
         q4.snowfall.put("mar", 2.3);

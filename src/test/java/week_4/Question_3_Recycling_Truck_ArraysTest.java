@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 
 public class Question_3_Recycling_Truck_ArraysTest {
 
-    @Test
+    @Test(timeout=3000)
     public void testGetRecyclingPerHouse() {
 
         Question_3_Recycling_Truck_Arrays q3 = new Question_3_Recycling_Truck_Arrays();
@@ -39,7 +39,7 @@ public class Question_3_Recycling_Truck_ArraysTest {
 
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testCalculateTotal() {
 
         Question_3_Recycling_Truck_Arrays q3 = new Question_3_Recycling_Truck_Arrays();
@@ -49,7 +49,7 @@ public class Question_3_Recycling_Truck_ArraysTest {
 
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testCalculateMax() {
 
         Question_3_Recycling_Truck_Arrays q3 = new Question_3_Recycling_Truck_Arrays();
@@ -67,7 +67,7 @@ public class Question_3_Recycling_Truck_ArraysTest {
 
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testCalculateMin() {
 
         Question_3_Recycling_Truck_Arrays q3 = new Question_3_Recycling_Truck_Arrays();
@@ -86,7 +86,7 @@ public class Question_3_Recycling_Truck_ArraysTest {
     }
 
 
-    @Test
+    @Test(timeout=3000)
     public void testCalculateHouseWithMostRecycling() {
 
         Question_3_Recycling_Truck_Arrays q3 = new Question_3_Recycling_Truck_Arrays();

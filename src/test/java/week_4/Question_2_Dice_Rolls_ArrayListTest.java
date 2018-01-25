@@ -22,7 +22,7 @@ import static org.powermock.api.easymock.PowerMock.replay;
 public class Question_2_Dice_Rolls_ArrayListTest {
     
 
-    @Test
+    @Test(timeout=3000)
     public void testRoll() throws Exception {
 
         Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();
@@ -54,7 +54,7 @@ public class Question_2_Dice_Rolls_ArrayListTest {
         
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testDiceTotal() throws Exception {
 
         Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();
@@ -79,7 +79,7 @@ public class Question_2_Dice_Rolls_ArrayListTest {
 
     
     
-    @Test
+    @Test(timeout=3000)
     public void testAllSameValue() throws Exception {
 
         Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();

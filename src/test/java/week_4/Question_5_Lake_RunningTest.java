@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class Question_5_Lake_RunningTest {
     
-    @Test
+    @Test(timeout=3000)
     public void testPrintFastestAndAverageTimeForAllLakes() throws Exception {
 
         Question_5_Lake_Running q5 = new Question_5_Lake_Running();
@@ -55,7 +55,7 @@ public class Question_5_Lake_RunningTest {
         
     }
 
-    @Test
+    @Test(timeout=3000)
     public void testFastestTimeForLake() throws Exception {
 
 
@@ -89,7 +89,7 @@ public class Question_5_Lake_RunningTest {
     }
     
     
-    @Test
+    @Test(timeout=3000)
     public void testAverageTimeForLake() throws Exception {
         
         
@@ -125,7 +125,7 @@ public class Question_5_Lake_RunningTest {
     
     
     
-    @Test
+    @Test(timeout=3000)
     public void testAddLake() throws Exception {
 
         Question_5_Lake_Running q5 = new Question_5_Lake_Running();
