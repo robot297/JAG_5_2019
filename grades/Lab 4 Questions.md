@@ -74,7 +74,10 @@ Write code in the methods indicated.
 ### Question 5 Lakes
 
 You are a runner, and you are in training for a race. You'd like to keep track of all of your
-times for your training runs. You only like to run around lakes. Here's some example data,
+times for your training runs. You only like to run around lakes. Here's some example data.
+
+For this program, we'll assume that these are decimal values of minutes, not minutes and seconds, and the math will be more straightforward. 
+ 
 
 |Lake    |Time   |
 |--------|-------|
@@ -103,6 +106,7 @@ Como, 28.14
 
 You should also be able to calculate the average time for each lake. So, for the same data as above,
 your program will calculate something like this (you may truncate, or round numbers to 2 decimal places)
+Again, we'll assume that these are decimal values of minutes, so you can figure out the regular average of the numbers. 
 
 ```
 Cedar, 44.23
