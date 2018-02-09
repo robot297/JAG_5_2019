@@ -40,6 +40,8 @@ import static input.InputUtils.*;
  
  Optional extra challenge: Write your own test to check the behavior of your selectComputerCardValue method.
  
+ Known bug: if the computer runs out of cards during the game, it will crash. Disregard this error.
+ 
  */
 
 public class Question_6_Go_Fish {
@@ -178,8 +180,7 @@ public class Question_6_Go_Fish {
             }
         }
     }
-
-
+    
 
     /** Helper methods to break down game logic into discreet steps  */
 
@@ -187,6 +188,9 @@ public class Question_6_Go_Fish {
     public static String selectComputerCardValue() {
         // TODO Select a valid card value from computerHand. A basic computer
         // strategy could be to select a card at random, or to request the value of the first card in their hand.
+        
+        // If the computer's hand is empty, return null.
+        
         // Optional: write your own test for this method.
         return null;
     }
@@ -204,6 +208,7 @@ public class Question_6_Go_Fish {
 
     public static boolean handHasCard(ArrayList<String> hand, String cardRequested) {
         // TODO Check if any cards of this value are present in the hand. Return true if so.
+        // If cardRequested is null, return false.
         return false;
     }
 
@@ -214,7 +219,6 @@ public class Question_6_Go_Fish {
         // example: card = "5" , fromHand = [ 5, 6, 7, 2, 5 ],  toHand = [ 1, 2 ]
         // After transfer, fromHand = [ 6, 7, 2 ], toHand = [ 1, 2, 5, 5 ]
         // You do not need to return anything - just modify the fromHand and toHand.
-
     }
 
 
@@ -230,7 +234,6 @@ public class Question_6_Go_Fish {
         // Hand should become ["2","7"] and books = ["4","Q","6", "A"]
         
         // You don't need to return anything.
-
     }
 
 
@@ -287,9 +290,11 @@ public class Question_6_Go_Fish {
     public static void printGameStats() {
 
         // TODO Display if human or computer wins by examining computerBooks and playerBooks. - who has the most books?
-        // Display a list of books each player has, and the total number of books.
         
-        // Also display the name of the winning player in this format: "Human is the winner" or "Computer is the winner".
+        // TODO Display a list of books each player has.
+        // TODO Display the total number of books for each player.
+        
+        // TODO display the name of the winning player in this format: "Human is the winner" or "Computer is the winner".
         
         
 

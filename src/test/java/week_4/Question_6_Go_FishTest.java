@@ -369,19 +369,30 @@ public class Question_6_Go_FishTest  {
     
     @Test(timeout=3000)
     public void testSelectComputerCardValue() throws Exception {
-        
+    
         // This is not a very satisfactory test, since the details of how
         // the computer chooses are not yet implemented.
         // You'll can improve  this test after you implement your selectComputerCardValue method,
         // TODO, optional - revise this test to check the behavior of your solution.
-        
+    
         computerHand = newArrayList("A", "2", "4");
-        
+    
         // Select 100 times, ensure card selected is one from the hand.
-        for (int x = 0 ; x < 100 ; x++) {
+        for (int x = 0; x < 100; x++) {
             String card = selectComputerCardValue();
             assertTrue("The computer's selection should be one of the cards in the computer's hand", computerHand.contains(card));
         }
+    
+    }
+    
+    
+    @Test(timeout=3000)
+    public void testSelectComputerCardValueNullForEmptyHand() throws Exception {
+        
+        // If the hand is empty, return null
+        computerHand = new ArrayList<>();
+        assertNull("If the computer's hand is empty, return null", selectComputerCardValue());
+        
     }
     
     
@@ -422,8 +433,13 @@ public class Question_6_Go_FishTest  {
         assertTrue(msg, handHasCard(exampleHand, "2"));
         assertTrue(msg, handHasCard(exampleHand, "5"));
         
+        
         assertFalse(msg, handHasCard(exampleHand, "Q"));
         assertFalse(msg, handHasCard(exampleHand, "6"));
+        
+        
+        msg = "If the card is null, return false";
+        assertFalse(msg, handHasCard(exampleHand, null));
         
     }
     
