@@ -95,11 +95,12 @@ public class Question_6_Go_Fish {
     /** Methods to set up game */
 
     public static ArrayList<String> createDeck() {
-        // TODO create an array with 52 strings, each representing a card value in a standard deck.
+        // TODO create an ArrayList with 52 strings, each representing a card value in a standard deck.
         // Your strings should be "A" "2", "3", "4" ... since suits don't matter in this game.
         // There will be 4 "A" and 4 "2" and 4 "3" ....
-        // Use the static cardValues ArrayList.
-        // Shuffle the deck.
+        // You may use the static cardValues ArrayList, which has a list of the card values.
+        
+        // TODO Shuffle the deck.
         return null;
     }
 
