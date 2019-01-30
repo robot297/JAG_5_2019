@@ -8,8 +8,6 @@ import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.util.ArrayList;
 
-import static com.google.common.collect.Lists.newArrayList;   //  Guava utility library
-
 // Mocking libraries for creating a mock InputUtils class, for generating example user input
 import static org.easymock.EasyMock.anyString;
 import static org.easymock.EasyMock.expect;
@@ -18,6 +16,7 @@ import static org.powermock.api.easymock.PowerMock.*;
 
 
 import static test_utils.ArrayListUtils.arrayListEqual;
+import static test_utils.ArrayListUtils.newArrayList;
 import static test_utils.ArrayListUtils.stringArrayListSameElementsAnyOrder;
 import static test_utils.PrintUtils.catchStandardOut;
 import static test_utils.PrintUtils.resetStandardOut;
@@ -133,13 +132,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "2", "3"),            /* initial player hand */
                 newArrayList("7", "8", "9"),            /* initial opponent hand */
                 newArrayList("Q", "A", "3"),            /* initial pool */
-                newArrayList(),                         /* initial player books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial player books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A", "2", "3", "Q"),       /* Expected player hand after turn */
                 newArrayList("7", "8", "9"),            /* Expected opponent hand after turn */
                 newArrayList("A", "3"),                 /* Expected pool after turn */
-                newArrayList(),                         /* Expected player books after turn */
-                newArrayList()                          /* Expected opponent books after turn */
+                new ArrayList<>(),                         /* Expected player books after turn */
+                new ArrayList<>()                          /* Expected opponent books after turn */
         );
     }
     
@@ -151,13 +150,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "2", "3"),            /* initial player hand */
                 newArrayList("3", "8", "9"),            /* initial opponent hand */
                 newArrayList("A", "2", "3"),            /* initial pool */
-                newArrayList(),                         /* initial player books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial player books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A", "2", "3", "3", "A"),       /* Expected player hand after turn */
                 newArrayList("8", "9"),            /* Expected opponent hand after turn */
                 newArrayList("2", "3"),                 /* Expected pool after turn */
-                newArrayList(),                         /* Expected player books after turn */
-                newArrayList()                          /* Expected opponent books after turn */
+                new ArrayList<>(),                         /* Expected player books after turn */
+                new ArrayList<>()                          /* Expected opponent books after turn */
         );
     }
     
@@ -169,13 +168,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "2", "3", "Q"),            /* initial player hand */
                 newArrayList("3", "8", "9", "2", "2"),            /* initial opponent hand */
                 newArrayList("A", "2", "3"),            /* initial pool */
-                newArrayList(),                         /* initial books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A", "2", "3", "Q", "2", "2", "3", "A"),       /* Expected player hand after turn */
                 newArrayList("8", "9"),            /* Expected opponent hand after turn */
                 newArrayList("2", "3"),                 /* Expected pool after turn */
-                newArrayList(),                         /* Expected player books after turn */
-                newArrayList()                          /* Expected opponent books after turn */
+                new ArrayList<>(),                         /* Expected player books after turn */
+                new ArrayList<>()                          /* Expected opponent books after turn */
         );
     }
     
@@ -187,13 +186,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "2", "3", "2", "2", "Q"),            /* initial player hand */
                 newArrayList("8", "9", "4"),            /* initial opponent hand */
                 newArrayList("2", "A", "3"),            /* initial pool */
-                newArrayList(),                         /* initial books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A", "3", "Q"),       /* Expected player hand after turn */
                 newArrayList("8", "9", "4"),            /* Expected opponent hand after turn */
                 newArrayList("A", "3"),                 /* Expected pool after turn */
                 newArrayList("2"),                         /* Expected player books after turn */
-                newArrayList()                          /* Expected opponent books after turn */
+                new ArrayList<>()                          /* Expected opponent books after turn */
         );
     }
     
@@ -205,13 +204,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "Q", "Q", "8", "7", "Q"),  /* initial player hand */
                 newArrayList("3", "7", "9"),            /* initial opponent hand */
                 newArrayList("Q", "A", "3"),            /* initial pool */
-                newArrayList(),                         /* initial player books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial player books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A", "8", "7", "7"),                 /* Expected player hand after turn */
                 newArrayList("3", "9"),            /* Expected opponent hand after turn */
                 newArrayList("A", "3"), /* Expected pool after turn */
                 newArrayList("Q"), /* Expected player books after turn */
-                newArrayList() /* Expected computer books after turn */
+                new ArrayList<>() /* Expected computer books after turn */
         );
         
     }
@@ -224,13 +223,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "Q", "Q", "8", "7", "Q"),  /* initial player hand */
                 newArrayList("3", "Q", "9"),            /* initial opponent hand */
                 newArrayList("9", "A", "3"),            /* initial pool */
-                newArrayList(),                         /* initial player books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial player books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A", "8", "7", "9"),                 /* Expected player hand after turn */
                 newArrayList("3", "9"),            /* Expected opponent hand after turn */
                 newArrayList("A", "3"), /* Expected pool after turn */
                 newArrayList("Q"), /* Expected player books after turn */
-                newArrayList() /* Expected computer books after turn */
+                new ArrayList<>() /* Expected computer books after turn */
         );
         
     }
@@ -244,13 +243,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "Q", "7", "Q", "7", "7", "Q"),  /* initial player hand */
                 newArrayList("3", "Q", "9"),            /* initial opponent hand */
                 newArrayList("7", "A", "3"),            /* initial pool */
-                newArrayList(),                         /* initial player books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial player books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A"),                 /* Expected player hand after turn */
                 newArrayList("3", "9"),            /* Expected opponent hand after turn */
                 newArrayList("A", "3"), /* Expected pool after turn */
                 newArrayList("Q", "7"), /* Expected player books after turn */
-                newArrayList() /* Expected computer books after turn */
+                new ArrayList<>() /* Expected computer books after turn */
         );
     }
     
@@ -267,13 +266,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "Q", "7", "Q", "7", "7", "Q"),  /* initial player hand */
                 newArrayList("3", "Q", "9"),            /* initial opponent hand */
                 newArrayList("7", "A", "3"),            /* initial pool */
-                newArrayList(),                         /* initial player books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial player books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A"),                 /* Expected player hand after turn */
                 newArrayList("3", "9"),            /* Expected opponent hand after turn */
                 newArrayList("A", "3"), /* Expected pool after turn */
                 newArrayList("Q", "7"), /* Expected player books after turn */
-                newArrayList() /* Expected computer books after turn */
+                new ArrayList<>() /* Expected computer books after turn */
         );
         
     }
@@ -291,13 +290,13 @@ public class Question_6_Go_FishTest  {
                 newArrayList("A", "Q", "7", "Q", "7", "7", "Q"),  /* initial player hand */
                 newArrayList("3", "Q", "7"),            /* initial opponent hand */
                 newArrayList("7", "A", "3"),            /* initial pool */
-                newArrayList(),                         /* initial player books */
-                newArrayList(),                         /* initial opponent books */
+                new ArrayList<>(),                         /* initial player books */
+                new ArrayList<>(),                         /* initial opponent books */
                 newArrayList("A", "7"),                 /* Expected player hand after turn */
                 newArrayList("3"),            /* Expected opponent hand after turn */
                 newArrayList("A", "3"), /* Expected pool after turn */
                 newArrayList("Q", "7"), /* Expected player books after turn */
-                newArrayList() /* Expected computer books after turn */
+                new ArrayList<>() /* Expected computer books after turn */
         );
     }
     

@@ -3,37 +3,37 @@
     {
       "question" : 1,
       "java_file": "Question_1_Cereals_ArrayList",
-      "test_file": "Question_1_Cereals_ArrayListTest",
+      "test_file": ["Question_1_Cereals_ArrayListTest"],
       "points": 1
     },
     {
       "question" : 2,
       "java_file": "Question_2_Dice_Rolls_ArrayList",
-      "test_file": "Question_2_Dice_Rolls_ArrayListTest",
+      "test_file": ["Question_2_Dice_Rolls_ArrayListTest"],
       "points": 2
     },
     {
       "question" : 3,
       "java_file": "Question_3_Recycling_Truck_Arrays",
-      "test_file": "Question_3_Recycling_Truck_ArraysTest",
+      "test_file": ["Question_3_Recycling_Truck_ArraysTest"],
       "points": 3
     },
     {
       "question" : 4,
       "java_file": "Question_4_Snowfall_HashMap",
-      "test_file": "Question_4_Snowfall_HashmapTest",
+      "test_file": ["Question_4_Snowfall_HashmapTest"],
       "points": 3
     },
     {
       "question" : 5,
       "java_file": "Question_5_Lake_Running",
-      "test_file": "Question_5_Lake_RunningTest",
+      "test_file": ["Question_5_Lake_RunningTest"],
       "points": 3
     },
     {
       "question" : 6,
       "java_file": "Question_6_Go_Fish",
-      "test_file": "Question_6_Go_FishTest",
+      "test_file": ["Question_6_Go_FishTest"],
       "points": 8
     }
 

@@ -10,11 +10,10 @@ import test_utils.ArrayListUtils;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static com.google.common.collect.Lists.newArrayList;
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
-import static org.powermock.api.easymock.PowerMock.mockStatic;
 import static org.powermock.api.easymock.PowerMock.replay;
+import static test_utils.ArrayListUtils.newArrayList;
 
 
 @RunWith(PowerMockRunner.class)
@@ -85,13 +84,13 @@ public class Question_2_Dice_Rolls_ArrayListTest {
         Question_2_Dice_Rolls_ArrayList q2 = new Question_2_Dice_Rolls_ArrayList();
         
         ArrayList<Integer> example = newArrayList(4, 5, 3);
-        assertFalse("allSameValue called with an ArrayList of 4,5,3 should return false", q2.allSameValue(example));
+        assertFalse("allSameValue called with an ArrayList of 4, 5, 3 should return false", q2.allSameValue(example));
 
         example = newArrayList(4, 4, 4, 4, 3);
         assertFalse("allSameValue called with an ArrayList of 4, 4, 4, 4, 3 should return false", q2.allSameValue(example));
 
         example = newArrayList(4, 4, 4);
-        assertTrue("allSameValue called with an ArrayList of 4,4,4 should return true", q2.allSameValue(example));
+        assertTrue("allSameValue called with an ArrayList of 4, 4, 4 should return true", q2.allSameValue(example));
     
         example = newArrayList(1, 1, 1);
         assertTrue("allSameValue called with an ArrayList of 1, 1, 1 should return true", q2.allSameValue(example));
@@ -103,7 +102,7 @@ public class Question_2_Dice_Rolls_ArrayListTest {
         assertTrue("allSameValue called with an ArrayList of 4 should return true", q2.allSameValue(example));
 
         // Empty list, returns false
-        example = newArrayList();
+        example = new ArrayList<>();
         assertFalse("allSameValue called with an empty ArrayList should return false", q2.allSameValue(example));
 
         // null list, returns false

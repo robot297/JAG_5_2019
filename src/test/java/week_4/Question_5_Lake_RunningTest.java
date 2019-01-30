@@ -1,7 +1,6 @@
 package week_4;
 
 import org.junit.Test;
-import sun.dc.pr.PRError;
 import test_utils.PrintUtils;
 
 import java.util.regex.Pattern;
@@ -57,19 +56,16 @@ public class Question_5_Lake_RunningTest {
 
     @Test(timeout=3000)
     public void testFastestTimeForLake() throws Exception {
-
-
+        
         Question_5_Lake_Running q5 = new Question_5_Lake_Running();
-
-
+        
         q5.addLake("Lake Como", 5);
         q5.addLake("Lake Como", 6);
         q5.addLake("Lake Como", 3);
 
         q5.addLake("Harriet", 5);
         q5.addLake("Harriet", 16);
-
-
+        
         q5.addLake("Superior", 45345);
         q5.addLake("Superior", 1121226);
 
@@ -92,10 +88,8 @@ public class Question_5_Lake_RunningTest {
     @Test(timeout=3000)
     public void testAverageTimeForLake() throws Exception {
         
-        
         Question_5_Lake_Running q5 = new Question_5_Lake_Running();
-    
-    
+        
         q5.addLake("Como", 5);
         q5.addLake("Como", 8);
         q5.addLake("CoMo", 2);   // average 5
@@ -118,30 +112,25 @@ public class Question_5_Lake_RunningTest {
         assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q5.averageTimeForLake("Superior"), delta);
         assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q5.averageTimeForLake("superior"), delta);
         
-        
         assertEquals("This method should return -1 if a lake is not found", -1, q5.fastestTimeForLake("Not There"), delta);
         
     }
-    
     
     
     @Test(timeout=3000)
     public void testAddLake() throws Exception {
 
         Question_5_Lake_Running q5 = new Question_5_Lake_Running();
-
-
+        
         q5.addLake("Como", 5);
         q5.addLake("CoMo", 2);
         q5.addLake("COMO", 3);    // Should all be considered the same lake.
-
-
+        
         double delta = 0.000001;
         assertEquals(2, q5.fastestTimeForLake("Como"), delta);
         assertEquals(2, q5.fastestTimeForLake("CoMo"), delta);
         assertEquals(2, q5.fastestTimeForLake("cOMO"), delta);
         assertEquals(2, q5.fastestTimeForLake("coMO"), delta);
-
-
+        
     }
 }

@@ -1,8 +1,8 @@
 package week_4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-import static com.google.common.collect.Lists.newArrayList;
 import static input.InputUtils.*;
 
 /**
@@ -48,8 +48,8 @@ public class Question_6_Go_Fish {
 
     static ArrayList<String> pool;
 
-    // Uses a Google Guava utility method to create an ArrayList from a set of values.
-    static final ArrayList<String> cardValues = newArrayList( "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" );
+    static final String[] deckArray = new String[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+    static final ArrayList<String> cardValues = new ArrayList(Arrays.asList(deckArray));
 
     // List of player's cards, list of computer's cards
     static ArrayList<String> playerHand, computerHand;

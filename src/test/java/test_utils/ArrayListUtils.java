@@ -1,6 +1,7 @@
 package test_utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Clara on 6/1/17.
@@ -9,9 +10,20 @@ import java.util.ArrayList;
 public class ArrayListUtils {
     
     
+    public static ArrayList<String> newArrayList(String... data) {
+        return new ArrayList<>(Arrays.asList(data));
+    }
+    
+    
+    public static ArrayList<Integer> newArrayList(Integer... data) {
+        return new ArrayList<>(Arrays.asList(data));
+    }
+    
+    
     /** Utility method to compare data in two ArrayLists.
      * Returns true if both lists are the same length, and
      * have the same items in the same order. If verbose == true, and Arrays are not equal, print the reason. */
+    
     
     public static boolean arrayListEqual(ArrayList a1, ArrayList a2, boolean verbose) {
         

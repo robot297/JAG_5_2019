@@ -15,17 +15,14 @@ import static org.powermock.api.easymock.PowerMock.mockStatic;
 import static org.powermock.api.easymock.PowerMock.replay;
 
 
-
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(InputUtils.class)
 public class Question_4_Snowfall_HashmapTest {
 
     private double delta = 0.0001;
-
-
+    
     @Test(timeout=3000)
-    public void testAddToHasMmap() throws Exception {
-
+    public void testAddToHashMap() throws Exception {
 
         Question_4_Snowfall_HashMap q4 = new Question_4_Snowfall_HashMap();
 
@@ -68,11 +65,10 @@ public class Question_4_Snowfall_HashmapTest {
         assertEquals(10.3, q4.snowfall.get("January"), delta);
         assertEquals(3.1, q4.snowfall.get("February"), delta);
         assertEquals(2, q4.snowfall.size());
-
-
-
+        
     }
 
+    
     @Test(timeout=3000)
     public void testMonthInHashMap() throws Exception {
 
@@ -84,6 +80,7 @@ public class Question_4_Snowfall_HashmapTest {
         assertFalse(q4.monthInHashMap("January"));
 
     }
+    
 
     @Test(timeout=3000)
     public void testTotalSnow() throws Exception {
@@ -95,8 +92,8 @@ public class Question_4_Snowfall_HashmapTest {
         q4.snowfall.put("mar", 2.3);
 
         assertEquals( 6.1 + 7.8 + 2.3 , q4.totalSnow(), delta);
-
     }
+    
 
     @Test(timeout=3000)
     public void testMaxSnow() throws Exception {
