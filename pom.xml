@@ -21,6 +21,14 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>edu.minneapolis</groupId>
                 <artifactId>ygi-maven-plugin</artifactId>
                 <version>0.0.2-alpha-4</version>
