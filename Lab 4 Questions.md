@@ -121,6 +121,11 @@ Your program should be case-insensitive. So "Como" is the same lake as "como" or
 
 Your program should use the generic types of data structures.
 You should use methods to organize your program.
+
+The tests don't know what type of data structure you'll use, so they can't test this program very easily.
+So, the way the tests work is to add data, and then try to calculate the fastest time and see if everything seems 
+to be working. So, *none of the tests will pass until you've finished the testFastestTimeForLake method*. 
+  
 Hint: you may need to combine more than one type of data structure.
 
 
