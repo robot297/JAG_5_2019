@@ -2,6 +2,7 @@ package test_utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Clara on 6/1/17.
@@ -62,20 +63,33 @@ public class ArrayListUtils {
         return arrayListEqual(a1, a2, false);
     }
 
-    /**  Checks is membership same in two ArrayLists. Same elements, but can be in any order */
+    /**  Checks if membership same in two ArrayLists. Same elements, but can be in any order */
+    public static boolean stringListSameElementsAnyOrder(List<String> a1, List<String> a2, boolean verbose) {
 
-
-    public static boolean stringArrayListSameElementsAnyOrder(ArrayList<String> a1, ArrayList<String> a2) {
-
-        if (a1 == null && a2 == null)  { return true; }    //both null
-        if (a1 == null || a2 == null)  { return false; }   //if previous condition is false, this checks if one or the other null
-        if (a1.size() != a2.size() )   { return false; }
+        if (a1 == null && a2 == null)  { return true; }    // both null, are the same
+        
+        if (a1 == null || a2 == null)  {
+            //if previous condition is false, this checks if one is null and the other is not null, therefore different
+            if (verbose) {
+                System.out.println("One list is null, the other is not." + a1 + " " + a2);
+            }
+            return false;
+        }
+        
+        if (a1.size() != a2.size() )   {
+            if (verbose) {
+                System.out.println("First list was " + a1 + "\nSecond list was " + a2 +
+                        "\nLists have different sizes so do not contain the same elements. Order does not matter.");
+            }
+            
+            return false;
+        }
 
         // Make a copy of a2 so can modify it without affecting the original ArrayList
-        ArrayList<String> a2_copy = (ArrayList<String>) a2.clone();
-
-        // Loop over first ArrayList. Remove each element from the other ArrayList.
-        for (String e : a1 ) {
+        List<String> a2_copy = new ArrayList<>(a2);
+        
+        // Loop over first ArrayList. Remove each element from the copy of a2
+        for (String e : a1) {
             a2_copy.remove(e);
         }
 
@@ -84,6 +98,10 @@ public class ArrayListUtils {
             return true;
         }
 
+        if (verbose) {
+            System.out.println("First list was " + a1 + "\nSecond list was " + a2 +
+                    "\nLists do not contain the same elements. Order does not matter.");
+        }
         return false;
     }
 }

@@ -45,7 +45,6 @@ public class Question_4_Snowfall_HashMap {
         snowfall.put("April", 0.1);
         snowfall.put("May", 0.0);
         
-        
         getNewMonthData();
 
         String monthWithMostSnow = maxSnow();
@@ -59,8 +58,7 @@ public class Question_4_Snowfall_HashMap {
         for (String month : snowfall.keySet()) {
             System.out.println("Month: " + month + ", Snowfall (inches): " + snowfall.get(month));
         }
-
-
+        
     }
     
     
@@ -93,6 +91,7 @@ public class Question_4_Snowfall_HashMap {
         }
     }
 
+    
     public boolean monthInHashMap(String month) {
 
         //TODO check if month is already a key in the in HashMap.

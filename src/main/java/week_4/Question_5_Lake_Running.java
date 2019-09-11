@@ -67,12 +67,12 @@ public class Question_5_Lake_Running {
 
 
     public static void main(String[] args) {
-        new Question_5_Lake_Running().running();
+        new Question_5_Lake_Running().getRunData();
     }
 
-    public void running() {
+    public void getRunData() {
 
-        while (moreLakes())  {
+        while (yesNoInput("More data to add?"))  {
             String name = stringInput("Enter lake name");
             double time = positiveDoubleInput("Enter time for running lake " + name);
             addLake(name, time);
@@ -81,27 +81,8 @@ public class Question_5_Lake_Running {
         printReportForAllLakes();
 
     }
-
-
-
-
-    public void printReportForAllLakes() {
-        
-        // TODO read data from your data structure, and print the average and fastest time for each lake.
-        /* Your output should look something like this, with the average, followed by the fastest.
     
-        Lake       Average      Fastest
-        Cedar      44.23        43.32
-        Harriet    46.66        44.43
-        Como       30.12        28.12
-        
-        
-        */
-        
-        // Use the fastestTimeForLake method, and averageTimeForLake method to help.
-
-
-    }
+    
 
 
     public double fastestTimeForLake(String lakeName) {
@@ -134,13 +115,9 @@ public class Question_5_Lake_Running {
         // Your lake name should not be case sensitive. "Como" is the same as "como".
     }
 
-
-
-
-    // You don't need to modify this method.
-    private boolean moreLakes() {
-        return yesNoInput("More lake data to add?");
+    
+    public void printReportForAllLakes() {
+    
     }
-
-
+    
 }
