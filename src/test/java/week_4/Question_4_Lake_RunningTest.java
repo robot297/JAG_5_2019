@@ -7,12 +7,12 @@ import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 
-public class Question_5_Lake_RunningTest {
+public class Question_4_Lake_RunningTest {
     
     @Test(timeout=3000)
     public void testPrintFastestAndAverageTimeForAllLakes() throws Exception {
 
-        Question_5_Lake_Running q5 = new Question_5_Lake_Running();
+        Question_4_Lake_Running q5 = new Question_4_Lake_Running();
 
         q5.addLake("Como", 5);
         q5.addLake("Como", 8);
@@ -57,7 +57,7 @@ public class Question_5_Lake_RunningTest {
     @Test(timeout=3000)
     public void testFastestTimeForLake() throws Exception {
         
-        Question_5_Lake_Running q5 = new Question_5_Lake_Running();
+        Question_4_Lake_Running q5 = new Question_4_Lake_Running();
         
         q5.addLake("Lake Como", 5);
         q5.addLake("Lake Como", 6);
@@ -88,7 +88,7 @@ public class Question_5_Lake_RunningTest {
     @Test(timeout=3000)
     public void testAverageTimeForLake() throws Exception {
         
-        Question_5_Lake_Running q5 = new Question_5_Lake_Running();
+        Question_4_Lake_Running q5 = new Question_4_Lake_Running();
         
         q5.addLake("Como", 5);
         q5.addLake("Como", 8);
@@ -120,7 +120,7 @@ public class Question_5_Lake_RunningTest {
     @Test(timeout=3000)
     public void testAddLake() throws Exception {
 
-        Question_5_Lake_Running q5 = new Question_5_Lake_Running();
+        Question_4_Lake_Running q5 = new Question_4_Lake_Running();
         
         q5.addLake("Como", 5);
         q5.addLake("CoMo", 2);

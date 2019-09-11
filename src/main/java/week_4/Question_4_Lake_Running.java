@@ -10,7 +10,6 @@ import static input.InputUtils.*;
  For this program, we'll assume that these are decimal values of minutes, not minutes and seconds,
  and the math will be more straightforward.
  
- 
  Cedar, 45.15
  Cedar, 43.32
  Harriet, 49.34
@@ -60,14 +59,14 @@ import static input.InputUtils.*;
  
 
  */
-public class Question_5_Lake_Running {
+public class Question_4_Lake_Running {
 
     // TODO create a global data structure to store all of your lakes and times here.
     // You methods will read and write to this data structure.
 
 
     public static void main(String[] args) {
-        new Question_5_Lake_Running().getRunData();
+        new Question_4_Lake_Running().getRunData();
     }
 
     public void getRunData() {
