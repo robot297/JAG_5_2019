@@ -24,7 +24,7 @@ import static input.InputUtils.stringInput;
 
 public class Question_3_Make_HashMap_Country {
     
-    String[] countryCodes = {"AF", "AX", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY", "BE", "BZ", "BJ", "BM", "BT", "BO", "BA", "BW",
+    static String[] countryCodes = {"AF", "AX", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY", "BE", "BZ", "BJ", "BM", "BT", "BO", "BA", "BW",
             "BV", "BR", "IO", "BN", "BG", "BF", "BI", "KH", "CM", "CA", "CV", "KY", "CF", "TD", "CL", "CN", "CX", "CC", "CO", "KM", "CG", "CD", "CK", "CR", "CI", "HR", "CU", "CY", "CZ", "DK", "DJ", "DM",
             "DO", "EC", "EG", "SV", "GQ", "ER", "EE", "ET", "FK", "FO", "FJ", "FI", "FR", "GF", "PF", "TF", "GA", "GM", "GE", "DE", "GH", "GI", "GR", "GL", "GD", "GP", "GU", "GT", "GG", "GN", "GW", "GY",
             "HT", "HM", "VA", "HN", "HK", "HU", "IS", "IN", "ID", "IR", "IQ", "IE", "IM", "IL", "IT", "JM", "JP", "JE", "JO", "KZ", "KE", "KI", "KP", "KR", "KW", "KG", "LA", "LV", "LB", "LS", "LR", "LY",
@@ -33,7 +33,7 @@ public class Question_3_Make_HashMap_Country {
             "ST", "SA", "SN", "CS", "SC", "SL", "SG", "SK", "SI", "SB", "SO", "ZA", "GS", "ES", "LK", "SD", "SR", "SJ", "SZ", "SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TL", "TG", "TK", "TO", "TT", "TN",
             "TR", "TM", "TC", "TV", "UG", "UA", "AE", "GB", "US", "UM", "UY", "UZ", "VU", "VE", "VN", "VG", "VI", "WF", "EH", "YE", "ZM", "ZW"};
     
-    String[] countryNames = {"Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia",
+    static String[] countryNames = {"Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia",
             "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil",
             "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China",
             "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, The Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote D'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark",
@@ -53,31 +53,29 @@ public class Question_3_Make_HashMap_Country {
     
     public static void main(String[] args) {
         
-        Map<String, String> countryCodes = createCountryCodesMap();
+        Map<String, String> countriesAndCodes = createCountryCodesMap(countryCodes, countryNames);
     
         String code;
         
         do {
-            code = stringInput("Enter a code to search for the country");
-            System.out.println(searchCountry(code, countryCodes));
+            code = stringInput("Enter a code to search for the country, press Enter to quit.");
+            System.out.println(searchCountry(code, countriesAndCodes));
         } while (code.length() > 0);
-        
-        
         
     }
     
-    private static Map<String, String> createCountryCodesMap() {
+    public static Map<String, String> createCountryCodesMap(String[] codes, String[] names) {
         
         //TODO Use the countryCodes and countryNames arrays to create a HashMap
         //TODO the country codes should be used as keys
-        // the
-        //
+        // the country names should be used as values
+        // The arrays are in order - so that the first element of codes should map to the first element of names
         
         return null;
     }
     
-    private static String searchCountry(String code, Map<String, String> countryCodes) {
-        // TODO Return "Code not found" if the country code is NOT in the HashMap
+    public static String searchCountry(String code, Map<String, String> countryCodes) {
+        // TODO Return "Code not found" if the country code is NOT in the HashMap. Use this exact string.
         // TODO Return the country name value for the country code key; given by the code parameter
         
          return null;   // TODO delete and replace with your code

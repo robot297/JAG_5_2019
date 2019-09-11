@@ -1,10 +1,21 @@
 package week_4;
 
 /**
- * Created by clara on 2019-09-10.
+ * A t-shirt vendor works at week-long events.  Each event runs from Monday to Friday.
+ *
+ * The vendor needs to store data about every event. They need to save the
+ *    - Name of the event
+ *    - T-shirts sold on Monday at that event
+ *    - T-shirts sold on Tuesday at that event
+ *    - T-shirts sold on Wednesday at that event
+ *    - T-shirts sold on Thursday at that event
+ *    - T-shirts sold on Friday at that event
+ *
+ *  For every event.
+ *
+ *  Complete this program to gather, and analyse data, about t-shirt sales.
  */
 public class Question_5_Sales_Records {
-    
     
     public static void main(String[] args) {
     
@@ -27,19 +38,17 @@ T
  You should use methods to organize your program.
  Hint: you may need to combine more than one type of data structure.
  
-
-exchange rates
-
-*/
     }
+    */
     
-    public static void addSalesForDay(String day, int sales) {
-    
+//
+//    public static void getWeekSales(String eventName) {
+//
+//    }
+//
+//   // public static void salesAtOrAboveAverage(day) {
+//
     }
-    
-   // public static void salesAtOrAboveAverage(day) {
-    
-   // }
     
     
 }
