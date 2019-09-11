@@ -11,7 +11,7 @@ import static input.InputUtils.*;
  *
  */
 
-public class Question_3_Camping_Reservations {
+public class Question_4_Camping_Reservations {
     
     
     /* Example site reservation data. Do not modify this */
