@@ -1,156 +1,115 @@
 # Lab 4
 
-### Question 1 Cereal
+### Question 1 Paint Colors
 
-ArrayList practice. 
+HashMap practice. 
 
-*	Remove "Oatmeal" from the ArrayList.
-*	Add the name of your favorite breakfast food to the ArrayList.
-*	Add "Cornflakes" to the ArrayList.
-*	Print all of the items in the ArrayList, one per line.
-*	Print a message if the ArrayList contains “Special K”. Print a different message if it does not contain "Special K".
-*	(Optional) non-programming question: what does Captain Crunch have to do with computer hacking?
+Follow the instructions to add a new key-value pair to the HashMap.  
+Finish the method to get the value for a key.  
+Finish the method that counts the number of values with a specific value.
 
 
-### Question 2 Dice
+### Question 2 Lake Quality
 
-Write a program to roll a set of dice. Generate a random number between 1 and 6 for
-each dice to be rolled, and save the values in an ArrayList.
+In Minnesota, we have many lakes. The Minnesota Pollution Control Agency monitors water quality in lakes, as part of monitoring Minnesota's environment.
 
-Display the total of all the dice rolled.
+One of the measures of lake quality is clarity - how far can you see down into the water?
+(If you are interested, more info https://www.pca.state.mn.us/water/what-water-clarity-tells-us
+and https://www.minneapolisparks.org/park_care__improvements/water_resources/lake_water_resources/)
 
-In other words, you'll need a method that 
-tests if all of the values in an ArrayList are the same. 
+Clarity is measured in distance.  A higher distance usually means better water quality.
 
+For swimming, going to the beach etc... it's better to have higher water quality.
+A common recommendation is at least 4 feet or more, for swimming and other water recreation.
 
-### Question 3 Recycling Truck
-
-You work for a recycling company.
-You’d like to collect some statistics on how much each of the
-houses on a certain street is recycling.
-
-Each house has to use crates for their recycling. Your program will
-count the number of crates set out by each house.
-
-This street is a little unusual since it only has 8 houses, and the city planner
-must have been a computer programmer, since the house numbers are 0, 1, 2, 3, 4, 5, 6, and 7.
-
-(Hint – the house numbers are the same as array element indexes.)
-
-Write a program that asks for the number of recycling crates set out by each house.
-You should store, and process this data, in an array.
-DON'T use an ArrayList or LinkedList!
-
-Analyse your data and determine:
-*	How many recycling crates, in total, from all the houses on the street?
-*	What is the largest number of crates set out by any house?
-*	What is the smallest number of crates set out by any house?
-*	Which house had the most recycling? Display that house number.
-
-Write code in the methods indicated.
+Finish this program to add and edit lake clarity measurements, and to search for lakes that have the recommended water clarity for swimming.
 
 
-### Question 4 Snowfall 
+### Question 3 Country Codes
 
-Extend this program to:
+First: Create a HashMap of country codes and country names.
 
-Ask user for a month, and snowfall amount, and add this data to HashMap provided.
-Check if month is already in HashMap before adding data.
-  If so, warn user that they will overwrite data, and ask for confirmation before writing.
-  If the user does not want to overwrite data, the addToHashMap method should do nothing. 
+The 2-letter country codes will be keys
+The country names will be values.
+ 
+The array countryCodes and countryNames contain (most) of the codes and names for all the countries in the world. The data is a little old and may be missing some countries or have older names for some countries - please let me know if you see any out-of-date data so I can update.  
 
-
-For month names, assume that all month names will be the full name, with the
-initial letter capitalized, and will always be spelled the same, example "May" or "September"
-
-Optional: add input validation if you like.
-
-Identify the month with the most snowfall.
-Add up all of the snowfall amounts and display the total.
-
-Write code in the methods indicated.
-
-
-### Question 5 Lakes
-
-You are a runner, and you are in training for a race. You'd like to keep track of all of your
-times for your training runs. You only like to run around lakes. Here's some example data.
-
-For this program, we'll assume that these are decimal values of minutes, not minutes and seconds, and the math will be more straightforward. 
+The first element in countryCodes (AF) is the code for the first element in countryNames (Afghanistan).  
+The second element in countryCodes (AL) is the code for the second element in countryNames (Aland Islands).
+ 
+Use a loop to add the data to a HashMap.
+ 
+Next: Finish the method that searches for a country name for a country code.  
+This method will search your new HashMap. If the user enters a valid country code, the method will return the country name for that code.  
+If the user enters a code that is not found in the HashMap (is not one of the HashMap keys) your method should return the EXACT String "Code not found" 
  
 
-|Lake    |Time   |
-|--------|-------|
-| Cedar  | 45.15 |
-| Cedar  | 43.32 |
-| Harriet| 49.34 |
-| Harriet| 44.43 |
-| Harriet| 46.22 |
-| Como   | 32.11 |
-| Como   | 28.14 |
+### Question 4 Camping Reservations 
 
-Write a program that enables you to enter the names of lakes and times, and store it all of this
-data in data structure(s). You'll need to save EVERY time entered for each lake.
+This program contains an example set of data about individual campsites for one day at a campground.  
+People who want to stay at a campsite can make reservations. 
+This program will search the campsite data and return a list of sites that match a user's search criteria, 
+and are available.   
 
-Don't store it in individual variables. Your program should still work if you started running
-around another lake too (e.g. Lake of the Isles, or Lake Phalen).
+In this program, the user will enter information about the type of campsite they want, and 
+your program will search for matching campsites, and return a list of campsites that are available. 
 
-Your program should be able to analyze the data that you have stored, and print your fastest
-time for each lake you ran around. So, for the data above, your program will display something like
+Each campsite has a unique number 
+Each campsite has a type ("RV" or "TENT")  
+Campsites may or may not have water at the site, stored under a "has_water" key with a value of "YES" or "NO"  
+Campsites can be reserved, stored in a reserved key with a value of "RESERVED" or "AVAILABLE"  
 
-```
-Cedar, 43.32  
-Harriet, 44.43  
-Como, 28.14
-```
-
-You should also be able to calculate the average time for each lake. So, for the same data as above,
-your program will calculate something like this (you may truncate, or round numbers to 2 decimal places)
-Again, we'll assume that these are decimal values of minutes, so you can figure out the regular average of the numbers. 
-
-```
-Cedar, 44.23
-Harriet, 46.66
-Como, 30.12
-```
-
-Print all of the the data - Lake Name, Average, and Fastest Time, in a table.
-
-
-Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
-
-Your program should use the generic types of data structures.
-You should use methods to organize your program.
-
-The tests don't know what type of data structure you'll use, so they can't test this program very easily.
-So, the way the tests work is to add data, and then try to calculate the fastest time and see if everything seems 
-to be working. So, *none of the tests will pass until you've finished the testFastestTimeForLake method*. 
+Finish the getMatchingSites method.  
+Search the siteInfo Map (the global variable) and return a List of campsites that match 
+the search criteria AND are available.
   
-Hint: you may need to combine more than one type of data structure.
+  - For example, if the user wants an RV campsite and wants water, then campsite 1 and 2 and 8 and 10 match,
+  but only 2 and 8 and 10 are available. Return a list of [2, 8, 10]
+  
+  - For example, if the user wants a TENT campsite and does not want water, then campsites 4, 5, 6 match,
+  but only 4 and 5 are available. Return a list [4, 5]
+  
+  - For example, if the user wants a TENT campsite and does want water, then site 3 matches,
+  but it is reserved. Return an empty list []
 
 
-### Question 6 Go Fish
+### Question 5 T-Shirt Sales Records
 
-`Question_6_Go_Fish.java` is a first prototype of a program that plays a simplified version of the children's card
-game Go Fish against you.  This version is based from the rules given at [https://en.wikipedia.org/wiki/Go_Fish](Wikipedia)
+A t-shirt vendor works at week-long events.  Each event runs for 5 days, from Monday to Friday.
 
-"Seven cards are dealt from a standard 52-card deck to each player.
-The remaining cards are spread out in a disorderly pile referred to as the "pool".
-The player whose turn it is to play asks another player for his or her cards of a
-particular face value. For example Alice may ask, "Bob, do you have any threes?"
-Alice must have at least one card of the rank she requested. Bob must hand
-over all cards of that rank if possible. If he has none, Bob tells Alice to "go fish"
-and Alice draws a card from the pool and places it in her own hand.
+The vendor needs to store data about every event. For each event, they need to save the
 
-Then it is the next player's turn – unless the card Alice is given is the card she asked for,
-in which case she shows it to the other players, and she gets another turn. When any player at
-any time has all four cards of one face value, it forms a book, and the cards must be placed
-face up in front of that player.
+ - Name of the event
+ - Number of t-shirts sold on Monday at that event
+ - Number of t-shirts sold on Tuesday at that event
+ - Number of t-shirts sold on Wednesday at that event
+ - Number of t-shirts sold on Thursday at that event
+ - Number of t-shirts sold on Friday at that event
 
-The players take turns. When all sets of cards have been laid down in books, the game ends.
-The player with the most books wins."
+The vendor never works on Saturday or Sunday.
 
-Your tasks: finish the incomplete methods. Run and test the program.
-You might want to add some extra System.out.println() statements to update the player on the status of the game.
+You may not know all of the data about an event when it
+is created in the data store, but you will know the name and at least one day of sales.
 
-Optional extra challenge: Write your own test to check the behavior of your selectComputerCardValue method.
+Complete this program to gather, and analyse data, about t-shirt sales.
+You'll need to decide what data structure to use to store the data.  
+*Hint*: your data structure may need to contain other data structures. 
+
+Your data structure should support these tasks:
+ - Add a new event and sales for a day
+ - Add another day sales for an existing event
+ - Return an array of 5 days of sales for one event
+ - Check if an event exists in the data structure
+ - Calculate if a day of sales is above average for the week of sales
+
+Use the exact strings "Monday", "Tuesday", "Wednesday", "Thursday" and "Friday"
+to add and search for data in your data structure.  
+Optional: you can add helper methods to validate and make user input easier.
+
+Notes: 
+- One of the tests will always fail. Part of your grade will be from human review of your code,
+the data structure you choose, and how you implement the required methods.
+- The tests don't know what data structure you will use so it's harder to check if your code is working. The 
+way several tests work is by calling your addSalesForDay method to add example data, and then call your other 
+method in sequence and checking that the expected data is returned.
+- **So, almost all of the tests will fail until you create your data structure, and finish the addSalesForDay method.**  

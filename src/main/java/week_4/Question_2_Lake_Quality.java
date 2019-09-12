@@ -7,12 +7,12 @@ import java.util.Map;
 import static input.InputUtils.*;
 
 /**
- * In Minnesota, we have a lot of lakes. The Minnesota Pollution Control Agency monitors water quality,
+ * In Minnesota, we have many lakes. The Minnesota Pollution Control Agency monitors water quality,
  * as part of monitoring Minnesota's environment.
  *
  * One of the measures of lake quality is clarity - how far can you see down into the water?
  * (If you are interested, more info https://www.pca.state.mn.us/water/what-water-clarity-tells-us
- * and https://www.minneapolisparks.org/park_care__improvements/water_resources/lake_water_resources/
+ * and https://www.minneapolisparks.org/park_care__improvements/water_resources/lake_water_resources/)
  *
  * Clarity is measured in distance.  A higher distance usually means better water quality.
  *

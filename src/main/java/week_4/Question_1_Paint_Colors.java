@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  *
- * Paint color hashmap - keys are room names, values are the color to paint that room.
+ * Paint color HashMap - keys are room names, values are the color to paint that room.
  *
  * In this program, practice adding data to a HashMap
  * Analyzing values in a HashMap
@@ -34,14 +34,14 @@ public class Question_1_Paint_Colors {
     
     
     public static String getKitchenColor(Map<String, String> paintColors) {
-        // TODO return the value for the key "Kitchen" in the paintColors map
+        // TODO return the value for the key "Kitchen" in the paintColors HashMap
         
         return null;    // TODO delete and replace with your code
     }
     
     public static int howManyYellowRooms(Map<String, String> paintColors) {
     
-        // TODO count how many values are the String "Yellow" and return this number.
+        // TODO count how many values are the String "Yellow" in the paintColors HashMap, and return this number.
         
         return -1;    // TODO delete and replace with your code
     }
