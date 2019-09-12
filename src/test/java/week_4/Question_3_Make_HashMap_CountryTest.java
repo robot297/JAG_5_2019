@@ -45,7 +45,7 @@ public class Question_3_Make_HashMap_CountryTest {
         Map<String, String> example = Map.of("A", "Armadillo", "B", "Bat", "C", "Capybara");
         
         String result = Question_3_Make_HashMap_Country.searchCountry("F", example);
-        assertEquals("Searching for a country code that is not in the map should return the exact string \"Code not found\", " +
+        assertEquals("Searching for a country code that is not in the map should return the exact string \"Code not found\".",
                 "Code not found", result);
     }
     
@@ -57,7 +57,7 @@ public class Question_3_Make_HashMap_CountryTest {
         Map<String, String> example = Map.of("A", "Armadillo", "B", "Bat", "C", "Capybara");
         
         String result = Question_3_Make_HashMap_Country.searchCountry("Armadillo", example);  // Is a country, but not a code. Should return "Code not found"
-        assertEquals("Searching for a country code that is not in the map should return the exact string \"Code not found\". Don't search by country. " +
+        assertEquals("Searching for a country code that is not in the map should return the exact string \"Code not found\". Don't search by country. ",
                 "Code not found", result);
     }
     
