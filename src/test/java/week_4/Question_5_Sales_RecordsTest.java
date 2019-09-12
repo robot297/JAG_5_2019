@@ -111,7 +111,7 @@ public class Question_5_Sales_RecordsTest {
     public void eventDoesNotExist() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
         q5.addSales("PyCon", "Monday", 3);
-        assertTrue(q5.eventExists("CSharpCon"));
+        assertFalse(q5.eventExists("CSharpCon"));
     }
     
     
