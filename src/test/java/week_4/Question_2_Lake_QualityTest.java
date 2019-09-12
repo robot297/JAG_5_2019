@@ -1,14 +1,12 @@
 package week_4;
 
 import org.junit.Test;
-import test_utils.ArrayListUtils;
-import test_utils.PrintUtils;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
+
+import test_utils.ArrayListUtils;
 
 import static org.junit.Assert.*;
 
@@ -35,7 +33,7 @@ public class Question_2_Lake_QualityTest {
         
         for (Map.Entry<String, Double> entry : updatedLakeClarities.entrySet()) {
             assertTrue("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.containsKey(entry.getKey()));
-            assertNotNull("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.get(entry.getKey()));
+            assertEquals("Add the new data to the HashMap. Overwrite if key is already present.", entry.getValue(), lakeClarities.get(entry.getKey()));
         }
 
     }
@@ -62,7 +60,7 @@ public class Question_2_Lake_QualityTest {
         
         for (Map.Entry<String, Double> entry : updatedLakeClarities.entrySet()) {
             assertTrue("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.containsKey(entry.getKey()));
-            assertNotNull("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.get(entry.getKey()));
+            assertEquals("Add the new data to the HashMap. Overwrite if key is already present.", entry.getValue(), lakeClarities.get(entry.getKey()));
         }
         
     }
@@ -88,7 +86,7 @@ public class Question_2_Lake_QualityTest {
         
         for (Map.Entry<String, Double> entry : updatedLakeClarities.entrySet()) {
             assertTrue("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.containsKey(entry.getKey()));
-            assertNotNull("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.get(entry.getKey()));
+            assertEquals("Add the new data to the HashMap. Overwrite if key is already present.", entry.getValue(), lakeClarities.get(entry.getKey()));
         }
     
     }
@@ -114,7 +112,7 @@ public class Question_2_Lake_QualityTest {
         
         for (Map.Entry<String, Double> entry : updatedLakeClarities.entrySet()) {
             assertTrue("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.containsKey(entry.getKey()));
-            assertNotNull("Add the new data to the HashMap. Overwrite if key is already present.", lakeClarities.get(entry.getKey()));
+            assertEquals("Add the new data to the HashMap. Overwrite if key is already present.", entry.getValue(), lakeClarities.get(entry.getKey()));
         }
         
     }
@@ -134,9 +132,7 @@ public class Question_2_Lake_QualityTest {
     
         boolean equal = ArrayListUtils.stringListSameElementsAnyOrder(swimming, expectedLakes, true);
         assertTrue("Return a list of all of the lake names with clarity at or above the clarity given.", equal);
-    
-    
-    
+        
     }
     
     @Test(timeout=3000)
@@ -155,7 +151,6 @@ public class Question_2_Lake_QualityTest {
         boolean equal = ArrayListUtils.stringListSameElementsAnyOrder(swimming, expectedLakes, true);
         assertTrue("Return a list of all of the lake names with clarity at or above the clarity given.", equal);
         
-    
     }
     
 }

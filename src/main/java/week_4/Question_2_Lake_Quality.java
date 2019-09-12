@@ -7,19 +7,20 @@ import java.util.Map;
 import static input.InputUtils.*;
 
 /**
- *
  * In Minnesota, we have a lot of lakes. The Minnesota Pollution Control Agency monitors water quality,
  * as part of monitoring Minnesota's environment.
  *
  * One of the measures of lake quality is clarity - how far can you see down into the water?
- * (If you are interested, more info https://www.pca.state.mn.us/water/what-water-clarity-tells-us)
+ * (If you are interested, more info https://www.pca.state.mn.us/water/what-water-clarity-tells-us
+ * and https://www.minneapolisparks.org/park_care__improvements/water_resources/lake_water_resources/
  *
  * Clarity is measured in distance.  A higher distance usually means better water quality.
  *
- * For swimming, going to the beach etc. it's better to have higher water quality.
- * A common recommendation is at least 48 inches for swimming and other water recreation.
+ * For swimming, going to the beach etc... it's better to have higher water quality.
+ * A common recommendation is at least 4 feet or more, for swimming and other water recreation.
  *
- *
+ * Finish this program to add and edit lake clarity measurements,
+ * and to search for lakes that have the recommended water clarity.
  */
 
 public class Question_2_Lake_Quality {
@@ -27,13 +28,15 @@ public class Question_2_Lake_Quality {
     public static void main(String[] args) {
         
         Map<String, Double> lakeClarities = new HashMap<>();
-        lakeClarities.put("Bde Maka Ska", 49.1);
-        lakeClarities.put("Harriet", 42.4);
-        lakeClarities.put("Nokomis", 37.2);
+        lakeClarities.put("Bde Maka Ska", 7.2);
+        lakeClarities.put("Harriet", 5.3);
+        lakeClarities.put("Powderhorn", 1.8);
+        lakeClarities.put("Nokomis", 2.4);
+        
         
         while (yesNoInput("Do you want to add or update a lake clarity?")) {
             String lakeName = stringInput("Enter the lake name");
-            double clarity = positiveDoubleInput("Enter the clarity, in inches");
+            double clarity = positiveDoubleInput("Enter the clarity, in feet");
             updateClarity(lakeClarities, lakeName, clarity);
         }
         
@@ -57,7 +60,7 @@ public class Question_2_Lake_Quality {
     public static List<String> getSwimmingLakes(Map<String, Double> lakeClarities, double minClarity) {
         
         // TODO return a list of lakes with clarity at or above minClarity.
-        // Example: if lakeClarities = {"Nokomis"=23, "Como"=49, "Bde Maka Ska"=52}
+        // Example: if lakeClarities = {"Nokomis"=2.3, "Como"=4.9, "Bde Maka Ska"=5.2}
         // Return a list of ["Nokomis", "Bde Maka Ska"]
         
         return null;   // TODO delete and replace with your code.

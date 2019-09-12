@@ -60,8 +60,6 @@ public class Question_1_Paint_ColorsTest {
     
     @Test(timeout = 3000)
     public void testCountYellowColorDifferentColorScheme() {
-    
-    
         Map<String, String> paintColors = new HashMap<>();
         paintColors.put("Kitchen", "Yellow");
         paintColors.put("Dining Room", "Yellow");
@@ -78,7 +76,6 @@ public class Question_1_Paint_ColorsTest {
     
     @Test(timeout = 3000)
     public void testCountYellowColorAnotherDifferentColorScheme() {
-        
         
         Map<String, String> paintColors = new HashMap<>();
         paintColors.put("Kitchen", "Pink");

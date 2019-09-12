@@ -53,6 +53,8 @@ public class Question_3_Make_HashMap_Country {
     
     public static void main(String[] args) {
         
+        // You do not need to modify this method.
+        
         Map<String, String> countriesAndCodes = createCountryCodesMap(countryCodes, countryNames);
     
         String code;
@@ -71,7 +73,7 @@ public class Question_3_Make_HashMap_Country {
         // the country names should be used as values
         // The arrays are in order - so that the first element of codes should map to the first element of names
         
-        return null;
+        return null;  // TODO delete and replace with your code
     }
     
     public static String searchCountry(String code, Map<String, String> countryCodes) {

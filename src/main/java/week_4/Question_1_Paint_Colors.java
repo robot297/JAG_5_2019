@@ -4,8 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by clara on 2019-09-10.
+ *
+ * Paint color hashmap - keys are room names, values are the color to paint that room.
+ *
+ * In this program, practice adding data to a HashMap
+ * Analyzing values in a HashMap
  */
+
 public class Question_1_Paint_Colors {
     
     public static void main(String[] args) {
@@ -38,7 +43,7 @@ public class Question_1_Paint_Colors {
     
         // TODO count how many values are the String "Yellow" and return this number.
         
-        return 0;    // TODO delete and replace with your code
+        return -1;    // TODO delete and replace with your code
     }
     
     
