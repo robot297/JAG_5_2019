@@ -1,4 +1,4 @@
-# Lab 4
+# Lab 5 - HashMaps
 
 ### Question 1 Paint Colors
 

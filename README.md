@@ -1,4 +1,4 @@
-## Java Lab 4, Data Structures
+## Java Lab 5, HashMaps
 
 Instructions:
 
