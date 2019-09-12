@@ -45,7 +45,8 @@ import static input.InputUtils.*;
 
 public class Question_5_Sales_Records {
     
-    String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+    // This array may be useful, or not. The only valid days to store sales data for are Monday through Friday.
+    String[] validDays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
     
     // TODO create your data structure here.
     
@@ -144,7 +145,7 @@ public class Question_5_Sales_Records {
     public Boolean daySaleAtOrAboveAverageForWeek(String event, String day) {
         
         // TODO return null if the event name is not found in your data structure
-        // TODO return null if the day of the week is not found in your data structure
+        // TODO return null if the day of the week is not a valid day in your data structure (only Monday - Friday are valid)
         
         //TODO use the data in your data structure to analyse the sales data for
         // one event. Calculate the average sales per day for the sales data present
@@ -165,9 +166,6 @@ public class Question_5_Sales_Records {
         
         return null;   // TODO delete and replace with your code
         
-        // TODO this program assumes you will only call this method with an event and a day of the week that exists.
-        // TODO - to think about - how could you handle this method being called for events that don't exist? Or days that don't exist?
-    
     }
     
 }
