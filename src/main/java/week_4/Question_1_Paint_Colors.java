@@ -7,8 +7,7 @@ import java.util.Map;
  *
  * Paint color HashMap - keys are room names, values are the color to paint that room.
  *
- * In this program, practice adding data to a HashMap
- * Analyzing values in a HashMap
+ * In this program, practice adding data to a HashMap, and analyzing values in a HashMap
  */
 
 public class Question_1_Paint_Colors {
