@@ -42,7 +42,7 @@ public class Question_2_Lake_Quality {
         
         // Decide which lakes are suitable for swimming
         
-        double minSwimmingClarity = 48;
+        double minSwimmingClarity = 4.0;   // four feet of clarity
         List<String> swimmingLakes = getSwimmingLakes(lakeClarities, minSwimmingClarity);
     
         System.out.println("These lakes are suitable for swimming: " + swimmingLakes);
@@ -61,6 +61,7 @@ public class Question_2_Lake_Quality {
         
         // TODO return a list of lakes with clarity at or above minClarity.
         // Example: if lakeClarities = {"Nokomis"=2.3, "Como"=4.9, "Bde Maka Ska"=5.2}
+        // and minClarity = 4.0
         // Return a list of ["Nokomis", "Bde Maka Ska"]
         
         return null;   // TODO delete and replace with your code.

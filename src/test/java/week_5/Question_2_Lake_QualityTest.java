@@ -139,12 +139,12 @@ public class Question_2_Lake_QualityTest {
     public void testGetLakesForSwimmingDifferentClarity() throws Exception {
         
         Map<String, Double> lakeClarities = new HashMap<>();
-        lakeClarities.put("Hat", 700.0);
-        lakeClarities.put("Bird", 200.0);
-        lakeClarities.put("Triangle", 300.0);
-        lakeClarities.put("Moose", 500.0);
+        lakeClarities.put("Hat", 70000.0);
+        lakeClarities.put("Bird", 20000.0);
+        lakeClarities.put("Triangle", 30000.0);
+        lakeClarities.put("Moose", 50000.0);
         
-        List<String> swimming = Question_2_Lake_Quality.getSwimmingLakes(lakeClarities, 300);
+        List<String> swimming = Question_2_Lake_Quality.getSwimmingLakes(lakeClarities, 30000);
 
         List<String> expectedLakes = List.of("Hat", "Triangle", "Moose");
     
