@@ -69,10 +69,18 @@ public class Question_3_Make_HashMap_Country {
     
     public static Map<String, String> createCountryCodesMap(String[] codes, String[] names) {
         
-        //TODO Use the countryCodes and countryNames arrays to create a HashMap
-        //TODO the country codes should be used as keys
-        // the country names should be used as values
+        // TODO Use the countryCodes and countryNames arrays to create a HashMap
+        // TODO each country code will be a key
+        // TODO the corresponding country name will be the value for the country code key
         // The arrays are in order - so that the first element of codes should map to the first element of names
+
+        // So the first element in codes is "AF" and the first element in names is "Afghanistan"
+        // Add the key-value pair "AF"="Afghanistan" to your HashMap.
+    
+        // The second element in codes is "AX" and the second element in names is "Aland Islands"
+        // Add the key-value pair "AX"="Aland Islands" to your HashMap.
+        
+        // Repeat for the rest of the codes and names. .
         
         return null;  // TODO delete and replace with your code
     }

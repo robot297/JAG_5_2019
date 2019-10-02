@@ -80,13 +80,13 @@ public class Question_4_Camping_Reservations {
         //TODO search the siteInfo Map (the global variable) and return a List of
         // sites that match the search criteria AND are available.
         //
-        // For example, if the user wants an RV campsite and wants water, then campsite 1 and 2 and 8 and 10 match,
-        // but only 2 and 8 and 10 are available. Return a list of [2, 8, 10]
+        // For example, if the user wants an RV campsite and wants water, then campsite "1" and "2" and "8" and "10" match,
+        // but only "2" and "8" and "10" are available. Return a list of ["2", "8", "10"]
         //
-        // For example, if the user wants a TENT campsite and does not want water, then campsites 4, 5, 6 match,
-        // but only 4 and 5 are available. Return a list [4, 5]
+        // For example, if the user wants a TENT campsite and does not want water, then campsites "4", "5", "6" match,
+        // but only "4" and "5" are available. Return a list ["4", "5"]
         //
-        // For example, if the user wants a TENT campsite and does want water, then campsite 3 matches,
+        // For example, if the user wants a TENT campsite and does want water, then campsite "3" matches,
         // but it is reserved. Return an empty list []
         
         return null;  // TODO replace with your code.
