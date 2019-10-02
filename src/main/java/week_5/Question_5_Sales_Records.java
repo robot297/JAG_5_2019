@@ -99,7 +99,7 @@ public class Question_5_Sales_Records {
         // Test comparing a day that doesn't exist to an average. Only Monday-Friday are valid days.
         addSales("PyCon", "Wednesday", 10);
         if (daySaleAtOrAboveAverageForWeek("PyCon", "Saturday") == null) {
-            System.out.println("Event does not exist");
+            System.out.println("Day or event name does not exist");
         }
     
     
@@ -145,9 +145,10 @@ public class Question_5_Sales_Records {
     public Boolean daySaleAtOrAboveAverageForWeek(String event, String day) {
         
         // TODO return null if the event name is not found in your data structure
-        // TODO return null if the day of the week is not a valid day in your data structure (only Monday - Friday are valid)
+        // TODO return null if the day of the week is not a valid day in your data structure
+        //     (only Monday - Friday are valid. The check should be case sensitive.)
         
-        //TODO use the data in your data structure to analyse the sales data for
+        // TODO use the data in your data structure to analyse the sales data for
         // one event. Calculate the average sales per day for the sales data present
         // return true if the sales for day are at or above average
         // return false if the sales for day are below average
