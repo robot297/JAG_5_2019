@@ -59,10 +59,11 @@ public class Question_2_Lake_Quality {
     
     public static List<String> getSwimmingLakes(Map<String, Double> lakeClarities, double minClarity) {
         
-        // TODO return a list of lakes with clarity at or above minClarity.
-        // Example: if lakeClarities = {"Nokomis"=2.3, "Como"=4.9, "Bde Maka Ska"=5.2}
+        // TODO create and return a list of lakes with clarity at or above minClarity.
+        // Example: if lakeClarities = {"Nokomis"=2.3, "Como"=4.9, "Harriet"=4.0, "Bde Maka Ska"=5.2}
         // and minClarity = 4.0
-        // Return a list of ["Como", "Bde Maka Ska"]
+        // Return a list of ["Como", "Harriet", "Bde Maka Ska"]
+        // The order of lakes in this list is not important.
         
         return null;   // TODO delete and replace with your code.
         
