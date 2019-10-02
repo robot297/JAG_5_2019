@@ -62,7 +62,7 @@ public class Question_2_Lake_Quality {
         // TODO return a list of lakes with clarity at or above minClarity.
         // Example: if lakeClarities = {"Nokomis"=2.3, "Como"=4.9, "Bde Maka Ska"=5.2}
         // and minClarity = 4.0
-        // Return a list of ["Nokomis", "Bde Maka Ska"]
+        // Return a list of ["Como", "Bde Maka Ska"]
         
         return null;   // TODO delete and replace with your code.
         
