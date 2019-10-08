@@ -57,11 +57,12 @@ public class Question_4_Camping_Reservations {
         // You do not need to modify the main method.
     
         List<String> siteTypes = List.of("RV", "TENT");
+    
+        String siteType;
         
-        String siteType = stringInput("Do you want to reserve an RV or TENT site?").toUpperCase();
-        if (!siteTypes.contains(siteType)) {
-            System.out.println("Enter RV or TENT. Try running the program again.");
-        }
+        do {
+            siteType = stringInput("Do you want to reserve an RV or TENT site? Enter RV or TENT.").toUpperCase();
+        } while (!siteTypes.contains(siteType));
         
         boolean needWater = yesNoInput("Do you want water at the site?");
         
