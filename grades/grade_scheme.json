@@ -4,31 +4,31 @@
     {
       "question" : 1,
       "java_file": "Question_1_Paint_Colors",
-      "test_files": ["week_4.Question_1_Paint_ColorsTest"],
+      "test_files": ["week_5.Question_1_Paint_ColorsTest"],
       "points": 2
     },
     {
       "question" : 2,
       "java_file": "Question_2_Lake_Quality",
-      "test_files": ["week_4.Question_2_Lake_QualityTest"],
+      "test_files": ["week_5.Question_2_Lake_QualityTest"],
       "points": 2
     },
     {
       "question" : 3,
       "java_file": "Question_3_Make_HashMap_Country",
-      "test_files": ["week_4.Question_3_Make_HashMap_CountryTest"],
+      "test_files": ["week_5.Question_3_Make_HashMap_CountryTest"],
       "points": 3
     },
     {
       "question" : 4,
       "java_file": "Question_4_Camping_Reservations",
-      "test_files": ["week_4.Question_4_Camping_ReservationsTest"],
+      "test_files": ["week_5.Question_4_Camping_ReservationsTest"],
       "points": 4
     },
     {
       "question" : 5,
       "java_file": "Question_5_Sales_Records",
-      "test_files": ["week_4.Question_5_Sales_RecordsTest"],
+      "test_files": ["week_5.Question_5_Sales_RecordsTest"],
       "points": 9
     }
   ]
