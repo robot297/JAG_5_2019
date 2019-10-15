@@ -48,8 +48,7 @@ public class Question_5_Sales_Records {
     // This array may be useful, or not. The only valid days to store sales data for are Monday through Friday.
     String[] validDays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
     
-    // TODO create your data structure here.
-    
+    // TODO create your data structure here.  DON'T make it static.
     
     public static void main(String[] args) {
         new Question_5_Sales_Records().sales();   // Don't modify this
