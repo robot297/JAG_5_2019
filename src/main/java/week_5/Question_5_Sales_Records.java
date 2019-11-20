@@ -116,6 +116,7 @@ public class Question_5_Sales_Records {
     
         // PLEASE NOTE the tests for your other methods rely on this method working
     
+        throw new RuntimeException("Not implemented");  // TODO Delete and replace with your code.
     }
     
     
@@ -126,9 +127,9 @@ public class Question_5_Sales_Records {
         
         // TODO return null if the event is not found.
         // PLEASE NOTE the tests for your other methods rely on this method working, so make sure it does.
-        
-        return null;   // TODO delete and replace with your code
-   
+    
+        throw new RuntimeException("Not implemented");  // TODO Delete and replace with your code.
+    
     }
     
     
@@ -136,8 +137,8 @@ public class Question_5_Sales_Records {
         // TODO return true if the event has been created
         // TODO return false otherwise.
     
-        return false;   // TODO delete and replace with your code
-  
+        throw new RuntimeException("Not implemented");  // TODO Delete and replace with your code.
+    
     }
     
     
@@ -163,9 +164,9 @@ public class Question_5_Sales_Records {
         // If this method is called for PythonCon on Monday, it will return true.
         // If this method is called for PythonCon on Tuesday, it will return false.
         // If this method is called for PythonCon on Wednesday, it will return false.
-        
-        return null;   // TODO delete and replace with your code
-        
+    
+        throw new RuntimeException("Not implemented");  // TODO Delete and replace with your code.
+    
     }
     
 }
