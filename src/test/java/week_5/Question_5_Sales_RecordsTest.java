@@ -9,8 +9,9 @@ import static org.junit.Assert.*;
  */
 public class Question_5_Sales_RecordsTest {
     
+    static final int TIMEOUT = 3000;
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void addSalesAndSalesForEvent() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
     
@@ -26,7 +27,7 @@ public class Question_5_Sales_RecordsTest {
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void addSalesAndSalesForEventDaysNotInOrder() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
     
@@ -42,7 +43,7 @@ public class Question_5_Sales_RecordsTest {
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void addSalesAndSalesForEventMissingSales() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
     
@@ -69,7 +70,7 @@ public class Question_5_Sales_RecordsTest {
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void addSalesForInvalidDay() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
     
@@ -85,14 +86,14 @@ public class Question_5_Sales_RecordsTest {
         assertArrayEquals( new int[]{1, 0, 0, 0, 0}, pyConSales);
     }
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void salesForEventEventDoesNotExist(){
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
         assertNull(q5.salesForEvent("Does not exist"));
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void eventExists() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
         q5.addSales("PyCon", "Monday", 3);
@@ -107,7 +108,7 @@ public class Question_5_Sales_RecordsTest {
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void eventDoesNotExist() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
         q5.addSales("PyCon", "Monday", 3);
@@ -115,7 +116,7 @@ public class Question_5_Sales_RecordsTest {
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void daySaleAtOrAboveAverageForWeek() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
     
@@ -134,14 +135,14 @@ public class Question_5_Sales_RecordsTest {
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void daySaleAtOrAboveAverageForWeekEventDoesNotExist() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
         assertNull("daySaleAtOrAboveAverageForWeek should return null if the event does not exist", q5.daySaleAtOrAboveAverageForWeek("Not an event", "Monday"));
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void daySaleAtOrAboveAverageForWeekDayAndEventDoNotExist() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
         assertNull("daySaleAtOrAboveAverageForWeek should return null if the event is not found, or the day of week is not valid. " +
@@ -153,7 +154,8 @@ public class Question_5_Sales_RecordsTest {
                 , q5.daySaleAtOrAboveAverageForWeek("Not an event", "Cat"));
     }
     
-    @Test
+    
+    @Test(timeout = TIMEOUT)
     public void daySaleAtOrAboveAverageForWeekDayDoestNotExist() {
         Question_5_Sales_Records q5 = new Question_5_Sales_Records();
         q5.addSales("JSCon", "Monday", 3);
@@ -167,7 +169,7 @@ public class Question_5_Sales_RecordsTest {
     }
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void humanReview() {
         fail("This test is intended to fail. The instructor will review your work and assign a grade");
     }

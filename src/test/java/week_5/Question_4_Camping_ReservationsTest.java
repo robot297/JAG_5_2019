@@ -12,7 +12,9 @@ import static org.junit.Assert.*;
  */
 public class Question_4_Camping_ReservationsTest {
     
-    @Test(timeout = 3000)
+    static final int TIMEOUT = 3000;
+    
+    @Test(timeout = TIMEOUT)
     public void testSearchTentWater() {
         List<String> results = Question_4_Camping_Reservations.getMatchingSites("TENT", true);
         List<String> expected = List.of();
@@ -20,7 +22,7 @@ public class Question_4_Camping_ReservationsTest {
     }
     
     
-    @Test(timeout = 3000)
+    @Test(timeout = TIMEOUT)
     public void testSearchTentNoWater() {
         List<String> results = Question_4_Camping_Reservations.getMatchingSites("TENT", false);
         List<String> expected = List.of("4", "5");
@@ -28,7 +30,7 @@ public class Question_4_Camping_ReservationsTest {
     
     }
     
-    @Test(timeout = 3000)
+    @Test(timeout = TIMEOUT)
     public void testSearchRVWater() {
         List<String> results = Question_4_Camping_Reservations.getMatchingSites("RV", true);
         List<String> expected = List.of("2", "8", "10");
@@ -36,7 +38,7 @@ public class Question_4_Camping_ReservationsTest {
     
     }
     
-    @Test(timeout = 3000)
+    @Test(timeout = TIMEOUT)
     public void testSearchRVNoWater() {
         List<String> results = Question_4_Camping_Reservations.getMatchingSites("RV", false);
         List<String> expected = List.of("7");

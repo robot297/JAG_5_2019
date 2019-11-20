@@ -12,7 +12,9 @@ import static org.junit.Assert.*;
  */
 public class Question_1_Paint_ColorsTest {
     
-    @Test(timeout = 3000)
+    static final int TIMEOUT = 3000;
+    
+    @Test(timeout = TIMEOUT)
     public void testKitchenColor() {
     
         Map<String, String> paintColors = new HashMap<>();
@@ -27,7 +29,7 @@ public class Question_1_Paint_ColorsTest {
     }
     
     
-    @Test(timeout = 3000)
+    @Test(timeout = TIMEOUT)
     public void testKitchenColorDifferentColorScheme() {
         
         Map<String, String> paintColors = new HashMap<>();
@@ -42,7 +44,7 @@ public class Question_1_Paint_ColorsTest {
     }
     
     
-    @Test(timeout = 3000)
+    @Test(timeout = TIMEOUT)
     public void testCountYellowColor() {
     
         Map<String, String> paintColors = new HashMap<>();
@@ -58,7 +60,7 @@ public class Question_1_Paint_ColorsTest {
     }
     
     
-    @Test(timeout = 3000)
+    @Test(timeout = TIMEOUT)
     public void testCountYellowColorDifferentColorScheme() {
         Map<String, String> paintColors = new HashMap<>();
         paintColors.put("Kitchen", "Yellow");
@@ -74,7 +76,7 @@ public class Question_1_Paint_ColorsTest {
     
     
     
-    @Test(timeout = 3000)
+    @Test(timeout = TIMEOUT)
     public void testCountYellowColorAnotherDifferentColorScheme() {
         
         Map<String, String> paintColors = new HashMap<>();

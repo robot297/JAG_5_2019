@@ -12,7 +12,9 @@ import static org.junit.Assert.*;
 
 public class Question_2_Lake_QualityTest {
     
-    @Test(timeout=3000)
+    static final int TIMEOUT = 3000;
+    
+    @Test(timeout = TIMEOUT)
     public void testAddNewLakeClarity() throws Exception {
     
         Map<String, Double> lakeClarities = new HashMap<>();
@@ -39,7 +41,7 @@ public class Question_2_Lake_QualityTest {
     }
     
     
-    @Test(timeout=3000)
+    @Test(timeout = TIMEOUT)
     public void testEditNewLakeClarity() {
         
         Map<String, Double> lakeClarities = new HashMap<>();
@@ -65,7 +67,7 @@ public class Question_2_Lake_QualityTest {
         
     }
     
-    @Test(timeout=3000)
+    @Test(timeout = TIMEOUT)
     public void testAddNewLakeClarityDifferentDataSet()  {
     
         Map<String, Double> lakeClarities = new HashMap<>();
@@ -92,7 +94,7 @@ public class Question_2_Lake_QualityTest {
     }
     
     
-    @Test(timeout=3000)
+    @Test(timeout = TIMEOUT)
     public void testEditNewLakeClarityDifferentDataSet() throws Exception {
         
         Map<String, Double> lakeClarities = new HashMap<>();
@@ -117,7 +119,7 @@ public class Question_2_Lake_QualityTest {
         
     }
     
-    @Test(timeout=3000)
+    @Test(timeout = TIMEOUT)
     public void testGetLakesForSwimming48() throws Exception {
     
         Map<String, Double> lakeClarities = new HashMap<>();
@@ -135,7 +137,7 @@ public class Question_2_Lake_QualityTest {
         
     }
     
-    @Test(timeout=3000)
+    @Test(timeout = TIMEOUT)
     public void testGetLakesForSwimmingDifferentClarity() throws Exception {
         
         Map<String, Double> lakeClarities = new HashMap<>();

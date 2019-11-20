@@ -11,7 +11,9 @@ import static org.junit.Assert.*;
  */
 public class Question_3_Make_HashMap_CountryTest {
     
-    @Test
+    static final int TIMEOUT = 3000;
+    
+    @Test(timeout = TIMEOUT)
     public void testMakeMap() {
         
         String[] exampleKeys = {"A", "B", "C"};
@@ -30,7 +32,7 @@ public class Question_3_Make_HashMap_CountryTest {
         }
     }
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void testSearchMapFound() {
     
         Map<String, String> example = Map.of("A", "Armadillo", "B", "Bat", "C", "Capybara");
@@ -39,7 +41,7 @@ public class Question_3_Make_HashMap_CountryTest {
         assertEquals("Searching for a country code should return the country name", "Bat", result);
     }
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void testSearchMapNotFound() {
         
         Map<String, String> example = Map.of("A", "Armadillo", "B", "Bat", "C", "Capybara");
@@ -51,7 +53,7 @@ public class Question_3_Make_HashMap_CountryTest {
     
     
     
-    @Test
+    @Test(timeout = TIMEOUT)
     public void testSearchMapForCountryNotFound() {
         
         Map<String, String> example = Map.of("A", "Armadillo", "B", "Bat", "C", "Capybara");
@@ -60,7 +62,6 @@ public class Question_3_Make_HashMap_CountryTest {
         assertEquals("Searching for a country code that is not in the map should return the exact string \"Code not found\". Don't search by country. ",
                 "Code not found", result);
     }
-    
     
     
 }
